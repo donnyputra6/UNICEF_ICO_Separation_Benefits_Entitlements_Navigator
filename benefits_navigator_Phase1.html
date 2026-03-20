@@ -148,7 +148,7 @@
   .faq-tag.active { background: var(--ub); color: #E8F5FB; border-color: var(--ub); font-weight: 500; }
   .faq-tiles-area { padding: 14px 16px 16px; border-bottom: 0.5px solid var(--border); }
   .faq-tiles-label { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; }
-  .faq-tile-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 8px; }
+  .faq-tile-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; }
   .faq-tile { border: 0.5px solid var(--border); border-radius: var(--radius-sm); padding: 10px 12px; cursor: pointer; transition: all 0.15s; background: var(--white); }
   .faq-tile:hover { border-color: var(--ub); background: var(--ul); }
   .faq-tile.active { border: 1.5px solid var(--ub); background: var(--ul); }
@@ -173,7 +173,7 @@
   .faq-q-text { font-size: 12px; font-weight: 500; color: var(--text); line-height: 1.5; }
   .faq-chevron { font-size: 11px; color: var(--muted); flex-shrink: 0; margin-top: 2px; transition: transform 0.2s; }
   .faq-chevron.open { transform: rotate(180deg); }
-  .faq-a { display: none; padding: 0 20px 12px 20px; font-size: 12px; color: var(--muted); line-height: 1.7; }
+  .faq-a { display: none; padding: 0 44px 12px 80px; font-size: 12px; color: var(--muted); line-height: 1.7; }
   .faq-a.open { display: block; }
   .faq-a p { margin-bottom: 7px; }
   .faq-a p:last-child { margin-bottom: 0; }
@@ -388,14 +388,15 @@
       </div>
       <div class="faq-tag-row" id="faq-tag-row">
         <span class="faq-tag active" onclick="faqSetTag('all',this)">All topics</span>
-        <span class="faq-tag" onclick="faqSetTag('leave',this)">Annual leave &amp; CTO</span>
-        <span class="faq-tag" onclick="faqSetTag('travel',this)">Travel &amp; shipment</span>
-        <span class="faq-tag" onclick="faqSetTag('indemnity',this)">Termination indemnity</span>
+        <span class="faq-tag" onclick="faqSetTag('leave',this)">General separation entitlements</span>
+        <span class="faq-tag" onclick="faqSetTag('travel',this)">IP separation entitlements</span>
+        <span class="faq-tag" onclick="faqSetTag('indemnity',this)">Termination indemnity &amp; separation payment</span>
         <span class="faq-tag" onclick="faqSetTag('pension',this)">Pension</span>
         <span class="faq-tag" onclick="faqSetTag('ashi',this)">ASHI &amp; ASLI</span>
-        <span class="faq-tag" onclick="faqSetTag('early',this)">Early separation</span>
-        <span class="faq-tag" onclick="faqSetTag('slwop',this)">SLWOP &amp; temp assignment</span>
-        <span class="faq-tag" onclick="faqSetTag('retirement',this)">Abolishment &amp; retirement</span>
+        <span class="faq-tag" onclick="faqSetTag('early',this)">Early separation (separation before the post abolishment date)</span>
+        <span class="faq-tag" onclick="faqSetTag('slwop',this)">SLWOP and temporary assignment</span>
+        <span class="faq-tag" onclick="faqSetTag('retirement',this)">Abolishment close to retirement</span>
+        <span class="faq-tag" onclick="faqSetTag('reappointment',this)">Reappointment after separation on post abolishment</span>
       </div>
     </div>
 
@@ -408,7 +409,7 @@
           <div class="faq-tile-icon" style="background:#E8F5FB;">
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#0C447C" stroke-width="1.3" stroke-linecap="round"><rect x="2" y="3" width="12" height="10" rx="2"/><line x1="5" y1="7" x2="11" y2="7"/><line x1="5" y1="10" x2="9" y2="10"/></svg>
           </div>
-          <div class="faq-tile-name">Annual leave &amp; CTO</div>
+          <div class="faq-tile-name">General separation entitlements</div>
           <div class="faq-tile-count" id="tc-leave">18 questions</div>
         </div>
 
@@ -416,7 +417,7 @@
           <div class="faq-tile-icon" style="background:#EAF3DE;">
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#27500A" stroke-width="1.3" stroke-linecap="round"><path d="M2 13l3-5 2 2 3-4 4 7"/><circle cx="12" cy="4" r="1.5"/></svg>
           </div>
-          <div class="faq-tile-name">Travel &amp; shipment</div>
+          <div class="faq-tile-name">IP separation entitlements</div>
           <div class="faq-tile-count" id="tc-travel">12 questions</div>
         </div>
 
@@ -424,7 +425,7 @@
           <div class="faq-tile-icon" style="background:#FAEEDA;">
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#633806" stroke-width="1.3" stroke-linecap="round"><rect x="3" y="2" width="10" height="12" rx="2"/><line x1="5.5" y1="6" x2="10.5" y2="6"/><line x1="5.5" y1="9" x2="10.5" y2="9"/><line x1="5.5" y1="12" x2="8" y2="12"/></svg>
           </div>
-          <div class="faq-tile-name">Termination indemnity</div>
+          <div class="faq-tile-name">Frequently Asked Questions — Termination indemnity &amp; separation payment</div>
           <div class="faq-tile-count" id="tc-indemnity">14 questions</div>
         </div>
 
@@ -432,7 +433,7 @@
           <div class="faq-tile-icon" style="background:#EEEDFE;">
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#3C3489" stroke-width="1.3" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>
           </div>
-          <div class="faq-tile-name">Pension (UNJSPF)</div>
+          <div class="faq-tile-name">Pension</div>
           <div class="faq-tile-count" id="tc-pension">12 questions</div>
         </div>
 
@@ -440,7 +441,7 @@
           <div class="faq-tile-icon" style="background:#FBEAF0;">
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#72243E" stroke-width="1.3" stroke-linecap="round"><path d="M8 13s-5-3.5-5-7a3 3 0 016 0 3 3 0 016 0c0 3.5-5 7-5 7"/></svg>
           </div>
-          <div class="faq-tile-name">ASHI &amp; ASLI</div>
+          <div class="faq-tile-name">Frequently Asked Questions — ASHI &amp; ASLI</div>
           <div class="faq-tile-count" id="tc-ashi">12 questions</div>
         </div>
 
@@ -448,7 +449,7 @@
           <div class="faq-tile-icon" style="background:#FAECE7;">
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#712B13" stroke-width="1.3" stroke-linecap="round"><path d="M10 8H3m0 0l2.5-2.5M3 8l2.5 2.5"/><line x1="13" y1="3" x2="13" y2="13"/></svg>
           </div>
-          <div class="faq-tile-name">Early separation</div>
+          <div class="faq-tile-name">Early separation (separation before the post abolishment date)</div>
           <div class="faq-tile-count" id="tc-early">5 questions</div>
         </div>
 
@@ -456,7 +457,7 @@
           <div class="faq-tile-icon" style="background:#E1F5EE;">
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#085041" stroke-width="1.3" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>
           </div>
-          <div class="faq-tile-name">SLWOP &amp; temp assignment</div>
+          <div class="faq-tile-name">SLWOP and temporary assignment</div>
           <div class="faq-tile-count" id="tc-slwop">25 questions</div>
         </div>
 
@@ -464,8 +465,16 @@
           <div class="faq-tile-icon" style="background:#F1EFE8;">
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#444441" stroke-width="1.3" stroke-linecap="round"><circle cx="8" cy="6" r="3"/><path d="M3 14c0-2.76 2.24-5 5-5s5 2.24 5 5"/></svg>
           </div>
-          <div class="faq-tile-name">Abolishment &amp; retirement</div>
+          <div class="faq-tile-name">Abolishment close to retirement</div>
           <div class="faq-tile-count" id="tc-retirement">14 questions</div>
+        </div>
+
+        <div class="faq-tile" id="tile-reappointment" onclick="faqSetTag('reappointment',null,true)">
+          <div class="faq-tile-icon" style="background:#E6F1FB;">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#185FA5" stroke-width="1.3" stroke-linecap="round"><path d="M14 8A6 6 0 002 8"/><path d="M2 8l2-2M2 8l2 2"/><path d="M2 14v-2h2"/></svg>
+          </div>
+          <div class="faq-tile-name">Reappointment after separation on post abolishment</div>
+          <div class="faq-tile-count" id="tc-reappointment">2 questions</div>
         </div>
 
       </div>
@@ -483,7 +492,7 @@
     </div>
 
     <!-- SECTION: Annual leave & CTO -->
-    <div class="faq-section-head" data-section="leave"><span class="faq-section-dot" style="background:#1CABE2;"></span>Annual leave &amp; CTO</div>
+    <div class="faq-section-head" data-section="leave"><span class="faq-section-dot" style="background:#1CABE2;"></span>Frequently Asked Questions — General separation entitlements</div>
 
     <div class="faq-item" data-topics="leave">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-leave">Leave</span><span class="faq-q-text">Will I receive compensation for all the annual leave days I did not use?</span></div><span class="faq-chevron">▾</span></div>
@@ -576,7 +585,7 @@
     </div>
 
     <!-- SECTION: Travel & shipment -->
-    <div class="faq-section-head" data-section="travel"><span class="faq-section-dot" style="background:#639922;"></span>Travel &amp; shipment</div>
+    <div class="faq-section-head" data-section="travel"><span class="faq-section-dot" style="background:#639922;"></span>Frequently Asked Questions — IP separation entitlements</div>
 
     <div class="faq-item" data-topics="travel">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-travel">Travel</span><span class="faq-q-text">Who is entitled to repatriation travel and shipment?</span></div><span class="faq-chevron">▾</span></div>
@@ -639,7 +648,7 @@
     </div>
 
     <!-- SECTION: Termination indemnity -->
-    <div class="faq-section-head" data-section="indemnity"><span class="faq-section-dot" style="background:#EF9F27;"></span>Termination indemnity &amp; separation payment</div>
+    <div class="faq-section-head" data-section="indemnity"><span class="faq-section-dot" style="background:#EF9F27;"></span>Frequently Asked Questions — Termination indemnity &amp; separation payment</div>
 
     <div class="faq-item" data-topics="indemnity">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-indemnity">Indemnity</span><span class="faq-q-text">My post is abolished. Will I receive termination indemnity?</span></div><span class="faq-chevron">▾</span></div>
@@ -712,7 +721,7 @@
     </div>
 
     <!-- SECTION: Pension -->
-    <div class="faq-section-head" data-section="pension"><span class="faq-section-dot" style="background:#7F77DD;"></span>Pension (UNJSPF)</div>
+    <div class="faq-section-head" data-section="pension"><span class="faq-section-dot" style="background:#7F77DD;"></span>Frequently Asked Questions — Pension</div>
 
     <div class="faq-item" data-topics="pension">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-pension">Pension</span><span class="faq-q-text">When may I retire?</span></div><span class="faq-chevron">▾</span></div>
@@ -775,7 +784,7 @@
     </div>
 
     <!-- SECTION: ASHI & ASLI -->
-    <div class="faq-section-head" data-section="ashi"><span class="faq-section-dot" style="background:#D4537E;"></span>ASHI &amp; ASLI</div>
+    <div class="faq-section-head" data-section="ashi"><span class="faq-section-dot" style="background:#D4537E;"></span>Frequently Asked Questions — ASHI &amp; ASLI</div>
 
     <div class="faq-item" data-topics="ashi">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-ashi">ASHI</span><span class="faq-q-text">What is ASHI?</span></div><span class="faq-chevron">▾</span></div>
@@ -838,7 +847,7 @@
     </div>
 
     <!-- SECTION: Early separation -->
-    <div class="faq-section-head" data-section="early"><span class="faq-section-dot" style="background:#D85A30;"></span>Early separation</div>
+    <div class="faq-section-head" data-section="early"><span class="faq-section-dot" style="background:#D85A30;"></span>Frequently Asked Questions — Early separation (separation before the post abolishment date)</div>
 
     <div class="faq-item" data-topics="early">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-early">Separation</span><span class="faq-q-text">My post is abolished in December 2025. May I separate earlier?</span></div><span class="faq-chevron">▾</span></div>
@@ -866,7 +875,7 @@
     </div>
 
     <!-- SECTION: SLWOP & temp assignment -->
-    <div class="faq-section-head" data-section="slwop"><span class="faq-section-dot" style="background:#1D9E75;"></span>SLWOP &amp; temporary assignment</div>
+    <div class="faq-section-head" data-section="slwop"><span class="faq-section-dot" style="background:#1D9E75;"></span>Frequently Asked Questions — SLWOP and temporary assignment</div>
 
     <div class="faq-item" data-topics="slwop">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-slwop">SLWOP</span><span class="faq-q-text">Who is eligible to take SLWOP?</span></div><span class="faq-chevron">▾</span></div>
@@ -994,7 +1003,7 @@
     </div>
 
     <!-- SECTION: Abolishment close to retirement -->
-    <div class="faq-section-head" data-section="retirement"><span class="faq-section-dot" style="background:#888780;"></span>Abolishment close to retirement &amp; reappointment</div>
+    <div class="faq-section-head" data-section="retirement"><span class="faq-section-dot" style="background:#888780;"></span>Frequently Asked Questions — Abolishment close to retirement</div>
 
     <div class="faq-item" data-topics="retirement">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-retirement">Deferral</span><span class="faq-q-text">What is separation deferral? Who is eligible?</span></div><span class="faq-chevron">▾</span></div>
@@ -1056,12 +1065,14 @@
       <div class="faq-a"><p>No, as the separation deferral is only a technical bridging and will not be counted as part of service for calculating separation entitlements and benefits.</p></div>
     </div>
 
-    <div class="faq-item" data-topics="retirement">
+    <div class="faq-section-head" data-section="reappointment"><span class="faq-section-dot" style="background:#185FA5;"></span>Frequently Asked Questions — Reappointment after separation on post abolishment</div>
+
+    <div class="faq-item" data-topics="reappointment">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-retirement">Reappointment</span><span class="faq-q-text">Do I need to repay the termination indemnity if I am reappointed? What about the other separation related payments?</span></div><span class="faq-chevron">▾</span></div>
       <div class="faq-a"><p>Most separation payments do not need to be repaid: annual leave liquidation, CTO payment, repatriation grant, termination indemnity/separation payment — No repayment required regardless of contract type (FT, TA, or consultancy). The <strong>only exception</strong> is the additional 50% termination indemnity: if reappointed within 12 months on a fixed-term contract — must be repaid. If reappointed on a temporary appointment or consultancy — no repayment required. If reappointed beyond 12 months — no repayment required.</p></div>
     </div>
 
-    <div class="faq-item" data-topics="retirement">
+    <div class="faq-item" data-topics="reappointment">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-retirement">Reappointment</span><span class="faq-q-text">I am receiving retirement benefit, and I have an ASHI plan. Will I lose these if I am reappointed?</span></div><span class="faq-chevron">▾</span></div>
       <div class="faq-a"><p>No, you will not lose these benefits. There are 2 major scenarios: 1. If your new contract is no longer than 6 months and your total calendar year UN income remains below USD 50,000, you will be able to keep your ongoing retirement benefit and ASHI coverage. 2. Should you exceed the above limits, both your retirement benefit and the ASHI will be suspended for the duration of your new contract. You will also contribute to the pension and you will have a UNICEF medical plan. Upon separation the payment of your retirement benefit will resume and you may also ask for the re-activation of your ASHI plan (with unchanged conditions).</p></div>
     </div>
@@ -1100,7 +1111,7 @@
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#003F7D" stroke-width="1.3"/><path d="M8 5v3l2 2" stroke="#003F7D" stroke-width="1.4" stroke-linecap="round"/></svg>
         </div>
         <div class="note-content">
-          <div class="note-label">Pension (UNJSPF)</div>
+          <div class="note-label">Frequently Asked Questions — Pension</div>
           <div class="note-text">Yes, as per Knowledge Article. Please obtain your UID from UIDONLY Request <strong>requestuidonly@unjspf.org</strong> and then log in to <a href="https://member.unjspf.org" target="_blank">https://member.unjspf.org</a>. For the UNJSPF Annual Statement, visit the <a href="https://www.unjspf.org/member-selfservice/" target="_blank">UNJSPF Member Self Service</a>.</div>
         </div>
       </div>
@@ -1120,7 +1131,7 @@
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="5" width="12" height="8" rx="2" stroke="#003F7D" stroke-width="1.3"/><path d="M5 5V4a3 3 0 016 0v1" stroke="#003F7D" stroke-width="1.3" stroke-linecap="round"/></svg>
         </div>
         <div class="note-content">
-          <div class="note-label">ASHI &amp; ASLI</div>
+          <div class="note-label">Frequently Asked Questions — ASHI &amp; ASLI</div>
           <div class="note-text">May be eligible in case of eligibility for retirement and receipt of monthly pension benefit, check Knowledge Article. See <a href="https://unicef.service-now.com/cc?sys_kb_id=5812881dfb0d32108b30f2ffbeefdcfe&id=kb_article_view&sysparm_rank=2&sysparm_tsqueryId=a248baa8fbf3fe50ea24fa43aeefdccc" target="_blank">ASHI Knowledge Article</a> and <a href="https://unicef.service-now.com/cc?sys_kb_id=c77286a92ba1a25072e1fa5cf291bf85&id=kb_article_view&sysparm_rank=1&sysparm_tsqueryId=6d19ba2cfbf3fe50ea24fa43aeefdc66" target="_blank">ASLI Knowledge Article</a>.</div>
         </div>
       </div>
@@ -1638,7 +1649,7 @@ function resetAll() {
 }
 
 // ── FAQ SEARCH + TILE LOGIC ──────────────────────────────────────────────────
-const faqBaseCounts = { leave:18, travel:12, indemnity:14, pension:12, ashi:12, early:5, slwop:25, retirement:14 };
+const faqBaseCounts = { leave:18, travel:12, indemnity:14, pension:12, ashi:12, early:5, slwop:25, retirement:12, reappointment:2 };
 let faqActiveTag = 'all';
 
 function faqSetTag(tag, el, fromTile) {
