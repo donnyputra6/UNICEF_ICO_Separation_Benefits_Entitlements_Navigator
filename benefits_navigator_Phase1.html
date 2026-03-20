@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Benefits &amp; Entitlements Navigator — Post Abolishment | UNICEF Indonesia P&amp;C</title>
+<style>
+  :root {
+    --ub: #1CABE2;
+    --ud: #003F7D;
+    --um: #0087CB;
+    --ul: #E8F5FB;
+    --ulm: #B3DDF2;
+    --white: #FFFFFF;
+    --text: #1A2D3D;
+    --muted: #4A6070;
+    --border: #C5DCE9;
+    --bg: #F4FAFD;
+    --card: #FFFFFF;
+    --g-yes: #D4EDDA; --t-yes: #155724;
+    --g-no:  #F8D7DA; --t-no:  #721C24;
+    --g-cond:#FFF3CD; --t-cond:#856404;
+    --radius: 10px;
+    --radius-sm: 6px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.6; }
+
+  /* ── HEADER ── */
+  .header { background: var(--ud); color: var(--white); padding: 0; }
+  .header-inner { max-width: 900px; margin: 0 auto; padding: 22px 28px 18px; }
+  .header-top { display: flex; align-items: center; gap: 14px; margin-bottom: 6px; }
+  .unicef-logo { display: flex; align-items: center; gap: 8px; }
+  .logo-mark { width: 36px; height: 36px; border-radius: 50%; background: var(--ub); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .logo-mark svg { width: 20px; height: 20px; }
+  .logo-text { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: rgba(255,255,255,0.85); }
+  .header-divider { width: 1px; height: 28px; background: rgba(255,255,255,0.2); }
+  .header-section { font-size: 11px; color: rgba(255,255,255,0.6); letter-spacing: 0.05em; }
+  .header-title { font-size: 20px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+  .header-sub { font-size: 12px; color: rgba(255,255,255,0.65); }
+  .header-bar { height: 4px; background: var(--ub); }
+
+  /* ── MAIN LAYOUT ── */
+  .main { max-width: 900px; margin: 0 auto; padding: 28px 28px 48px; }
+
+  /* ── POLICY NOTICE ── */
+  .policy-notice { background: var(--ul); border: 1px solid var(--ulm); border-radius: var(--radius-sm); padding: 10px 14px; margin-bottom: 24px; display: flex; gap: 10px; align-items: flex-start; font-size: 12px; color: var(--ud); }
+  .notice-icon { flex-shrink: 0; margin-top: 1px; }
+
+  /* ── NAVIGATOR CARD ── */
+  .navigator { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,63,125,0.06); }
+  .nav-header { background: var(--ub); padding: 14px 20px; }
+  .nav-header-title { font-size: 13px; font-weight: 600; color: var(--white); }
+  .nav-header-sub { font-size: 11px; color: rgba(255,255,255,0.75); margin-top: 2px; }
+
+  /* Progress bar */
+  .progress-wrap { padding: 14px 20px 0; }
+  .progress-track { height: 4px; background: var(--ulm); border-radius: 2px; margin-bottom: 6px; }
+  .progress-fill { height: 100%; border-radius: 2px; background: var(--ub); transition: width 0.35s ease; }
+  .progress-label { font-size: 11px; color: var(--muted); }
+
+  /* Steps */
+  .steps { padding: 16px 20px 20px; display: flex; flex-direction: column; gap: 18px; }
+  .step { }
+  .step-label { font-size: 11px; font-weight: 600; color: var(--ud); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+  .step-num { width: 20px; height: 20px; border-radius: 50%; background: var(--ud); color: white; font-size: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .step-num.active { background: var(--ub); }
+  .step-num.done { background: var(--t-yes); }
+  .options { display: flex; gap: 8px; flex-wrap: wrap; }
+  .opt { padding: 8px 16px; border: 1.5px solid var(--border); border-radius: 20px; cursor: pointer; font-size: 13px; color: var(--muted); background: var(--white); transition: all 0.15s; user-select: none; }
+  .opt:hover { border-color: var(--ub); color: var(--ub); }
+  .opt.selected { background: var(--ub); border-color: var(--ub); color: var(--white); font-weight: 500; }
+  .opt.disabled { opacity: 0.4; pointer-events: none; }
+  .step.locked { opacity: 0.45; pointer-events: none; }
+
+  /* ── RESULTS ── */
+  .results { }
+  .results-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .results-title { font-size: 15px; font-weight: 600; color: var(--ud); }
+  .results-persona { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .reset-btn { font-size: 12px; color: var(--ub); background: none; border: 1px solid var(--ub); border-radius: 20px; padding: 5px 14px; cursor: pointer; transition: all 0.15s; }
+  .reset-btn:hover { background: var(--ub); color: white; }
+
+  /* Section group */
+  .section-group { margin-bottom: 16px; }
+  .section-label { font-size: 11px; font-weight: 600; color: var(--ud); text-transform: uppercase; letter-spacing: 0.07em; padding: 7px 12px; background: var(--ul); border: 1px solid var(--ulm); border-radius: var(--radius-sm) var(--radius-sm) 0 0; border-bottom: none; }
+  .ent-table { width: 100%; border-collapse: collapse; border: 1px solid var(--border); border-radius: 0 0 var(--radius-sm) var(--radius-sm); overflow: hidden; }
+  .ent-table thead tr { background: #EEF7FC; }
+  .ent-table th { font-size: 11px; font-weight: 600; color: var(--muted); padding: 7px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+  .ent-table th:last-child { text-align: center; width: 100px; }
+  .ent-table td { font-size: 12px; padding: 9px 12px; border-bottom: 1px solid #EEF4F8; vertical-align: top; color: var(--text); }
+  .ent-table tr:last-child td { border-bottom: none; }
+  .ent-table tr:nth-child(even) td { background: #FAFCFE; }
+  .ent-name { font-weight: 500; font-size: 13px; color: var(--text); display: block; margin-bottom: 2px; }
+  .ent-detail { font-size: 12px; color: var(--muted); line-height: 1.5; }
+  .ent-ref { font-size: 10px; color: var(--ub); margin-top: 3px; display: block; }
+  .status-pill { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 12px; text-align: center; }
+  .pill-Eligible { background: var(--g-yes); color: var(--t-yes); }
+  .pill-Conditional { background: var(--g-cond); color: var(--t-cond); }
+  .pill-NA { background: var(--g-no); color: var(--t-no); }
+  .td-status { text-align: center; }
+
+  /* Service note */
+  .service-note { margin-top: 12px; padding: 10px 14px; background: #FFF9E6; border: 1px solid #F0D878; border-radius: var(--radius-sm); font-size: 12px; color: #6B5000; display: none; }
+  .service-note.show { display: block; }
+
+  /* ── IMPORTANT NOTES ── */
+  .notes-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; margin-bottom: 20px; box-shadow: 0 1px 4px rgba(0,63,125,0.04); }
+  .notes-title { font-size: 13px; font-weight: 600; color: var(--ud); margin-bottom: 12px; display: flex; align-items: center; gap: 7px; }
+  .notes-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .notes-list li { font-size: 12px; color: var(--muted); padding-left: 16px; position: relative; line-height: 1.6; }
+  .notes-list li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--ub); position: absolute; left: 0; top: 7px; }
+  .notes-list li strong { color: var(--text); font-weight: 500; }
+
+  /* ── LEGEND ── */
+  .legend { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
+  .legend-pill { font-size: 11px; font-weight: 600; padding: 2px 10px; border-radius: 10px; }
+
+  /* ── DOWNLOAD STRIP ── */
+  .download-strip { background: var(--ul); border: 1px solid var(--ulm); border-radius: var(--radius); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .dl-text { font-size: 13px; color: var(--ud); font-weight: 500; }
+  .dl-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .dl-btn { background: var(--ud); color: white; border: none; border-radius: 20px; padding: 8px 20px; font-size: 13px; font-weight: 500; cursor: pointer; transition: background 0.15s; text-decoration: none; display: inline-block; }
+  .dl-btn:hover { background: var(--ub); }
+
+  /* ── FOOTER ── */
+  .footer { max-width: 900px; margin: 0 auto; padding: 0 28px 24px; font-size: 11px; color: var(--muted); border-top: 1px solid var(--border); padding-top: 16px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .main { padding: 16px 14px 36px; }
+    .header-inner { padding: 16px 14px 12px; }
+    .header-title { font-size: 16px; }
+    .options { flex-direction: column; }
+    .opt { text-align: center; }
+    .ent-table th:nth-child(2), .ent-table td:nth-child(2) { display: none; }
+    .download-strip { flex-direction: column; }
+    .footer { flex-direction: column; }
+  }
+
+  .hidden { display: none !important; }
+  .fade-in { animation: fadeIn 0.25s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:mda26ace941f4791a7314a339fee829c msdt:dt="string">08. Human Resources|b128eb2b-8806-4631-9c24-12c666174640</mso:mda26ace941f4791a7314a339fee829c>
+<mso:TaxCatchAll msdt:dt="string">454;#08. Human Resources</mso:TaxCatchAll>
+<mso:_dlc_DocId msdt:dt="string">XPMHCF4M7FPR-798361005-4720</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">7f15a234-c329-498f-8561-3bb50a3523f3</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://unicef.sharepoint.com/teams/IDN-HR/_layouts/15/DocIdRedir.aspx?ID=XPMHCF4M7FPR-798361005-4720, XPMHCF4M7FPR-798361005-4720</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-inner">
+    <div class="header-top">
+      <div class="unicef-logo">
+        <div class="logo-mark">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="8" r="3.5" fill="white"/>
+            <path d="M5 19c0-3.87 3.13-7 7-7s7 3.13 7 7" stroke="white" stroke-width="2" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+        <div>
+          <div class="logo-text">UNICEF</div>
+          <div style="font-size:9px;color:rgba(255,255,255,0.5);letter-spacing:0.04em;">INDONESIA</div>
+        </div>
+      </div>
+      <div class="header-divider"></div>
+      <div class="header-section">People &amp; Culture Section</div>
+    </div>
+    <div class="header-title">Benefits &amp; Entitlements Navigator</div>
+    <div class="header-sub">Post abolishment — contract end date coincides with abolishment notification &nbsp;·&nbsp; Based on GUIDANCE/DHR/2022/002 v 1 April 2025</div>
+  </div>
+  <div class="header-bar"></div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- Policy notice -->
+  <div class="policy-notice">
+    <div class="notice-icon">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#003F7D" stroke-width="1.2"/><path d="M8 7v4M8 5v.5" stroke="#003F7D" stroke-width="1.3" stroke-linecap="round"/></svg>
+    </div>
+    <div>This tool covers scenarios where your <strong>contract end date and post abolishment notification fall on the same day</strong>, issued from 1 April 2025 onwards. Please contact the P&amp;C Section for questions specific to your situation.
+    </div>
+  </div>
+
+  <!-- NAVIGATOR -->
+  <div class="navigator">
+    <div class="nav-header">
+      <div class="nav-header-title">Find your entitlements</div>
+      <div class="nav-header-sub">Answer three questions to see only what applies to you</div>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-track"><div class="progress-fill" id="prog-fill" style="width:0%"></div></div>
+      <div class="progress-label" id="prog-label">Step 1 of 3 — Select your contract type to begin</div>
+    </div>
+
+    <div class="steps" id="steps-panel">
+
+      <!-- Step 1 -->
+      <div class="step" id="step1">
+        <div class="step-label">
+          <div class="step-num active" id="snum1">1</div>
+          Contract type
+        </div>
+        <div class="options">
+          <div class="opt" onclick="selectStep1('TA')" id="opt-ta">Temporary Appointment (TA)</div>
+          <div class="opt" onclick="selectStep1('FT')" id="opt-ft">Fixed-Term / Continuing / Permanent</div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step locked" id="step2">
+        <div class="step-label">
+          <div class="step-num" id="snum2">2</div>
+          Staff category
+        </div>
+        <div class="options" id="step2-opts">
+          <!-- populated by JS -->
+        </div>
+      </div>
+
+      <!-- Step 3 (years — FT only) -->
+      <div class="step locked" id="step3">
+        <div class="step-label">
+          <div class="step-num" id="snum3">3</div>
+          Years of continuous active service
+        </div>
+        <div class="options">
+          <div class="opt" onclick="selectStep3('lt5')" id="opt-lt5">Under 5 years</div>
+          <div class="opt" onclick="selectStep3('5to6')" id="opt-5to6">5 to 6 years</div>
+          <div class="opt" onclick="selectStep3('gt6')" id="opt-gt6">6 years or more</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RESULTS (hidden until complete) -->
+  <div id="results-panel" class="hidden">
+
+    <!-- Legend -->
+    <div class="legend">
+      <div class="legend-item"><span class="legend-pill pill-Eligible">Eligible</span> Entitlement applies</div>
+      <div class="legend-item"><span class="legend-pill pill-Conditional">Conditional</span> Subject to criteria</div>
+      <div class="legend-item"><span class="legend-pill pill-NA">N/A</span> Not applicable</div>
+    </div>
+
+    <div class="results">
+      <div class="results-header">
+        <div>
+          <div class="results-title" id="results-title">Your entitlements</div>
+          <div class="results-persona" id="results-persona"></div>
+        </div>
+        <button class="reset-btn" onclick="resetAll()">&#8635; Start over</button>
+      </div>
+
+      <div id="results-body"></div>
+
+      <div class="service-note" id="service-note-repatriation">
+        <strong>Note on repatriation grant:</strong> Applicable only if your continuous active service is at least 5 years. Please check the Repatriation Grant Knowledge Article on the UNICEF intranet for the calculation method.
+      </div>
+      <div class="service-note" id="service-note-indemnity">
+        <strong>Note on termination indemnity:</strong> Applicable if continuous active service is at least 6 years and you sign the No Contest Agreement. Refer to the Separation Policy, Annex 1, page 22 for the calculation.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- IMPORTANT NOTES -->
+  <div class="notes-card">
+    <div class="notes-title">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="3" fill="#E8F5FB" stroke="#003F7D" stroke-width="1"/><path d="M5 8h6M5 5.5h6M5 10.5h4" stroke="#003F7D" stroke-width="1.1" stroke-linecap="round"/></svg>
+      Important notes for all staff
+    </div>
+    <ul class="notes-list">
+      <li><strong>Settle all debts before separation.</strong> Outstanding salary advance, rental advance, education grant advance, or other cash advances must be cleared with UNICEF Finance. UNJSPF will not process your pension benefits until all debts are settled.</li>
+      <li><strong>Pension (UNJSPF).</strong> Obtain your UID by emailing <strong>requestuidonly@unjspf.org</strong>, then access your account at <strong>member.unjspf.org</strong>. Annual statements are available via the UNJSPF Member Self-Service portal.</li>
+      <li><strong>Health insurance.</strong> Your CIGNA/Aetna coverage expires at the end of your last month of employment — not your last working day.</li>
+      <li><strong>ASHI &amp; ASLI.</strong> After-Service Health and Life Insurance eligibility depends on meeting retirement criteria and receiving a monthly pension benefit. Verify through the respective Knowledge Articles.</li>
+      <li><strong>US citizens and residents.</strong> You are eligible for income tax reimbursement. Contact the UN Tax Unit at <strong>(212) 963-2949</strong>.</li>
+      <li><strong>NYHQ staff retiring aged 55+.</strong> May be eligible to apply for a US Green Card. Contact <strong>visadesk@unicef.org</strong> and <strong>dosvc@un.org</strong> for eligibility and process.</li>
+    </ul>
+  </div>
+
+  <!-- DOWNLOAD STRIP -->
+  <div class="download-strip">
+    <div>
+      <div class="dl-text">Need a printable version?</div>
+      <div class="dl-sub">Download the Benefits &amp; Entitlements Matrix PDF — all four staff profiles in one document</div>
+    </div>
+    <a class="dl-btn" href="#" onclick="alert('Replace this link with the SharePoint URL of the Option B PDF.')">Download PDF ↓</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div>UNICEF Indonesia &nbsp;·&nbsp; People &amp; Culture Section &nbsp;·&nbsp; Internal use only</div>
+  <div>Based on GUIDANCE/DHR/2022/002 &nbsp;·&nbsp; Effective 1 April 2025 &nbsp;·&nbsp; <span id="last-updated">Version 1.0</span></div>
+</div>
+
+<script>
+// ── DATA ────────────────────────────────────────────────────────────────────
+// Each entry: { section, name, detail, ref, status }
+// status: "Eligible" | "Conditional" | "NA"
+// Keyed by profile: contractType|staffCategory|yearsKey
+// yearsKey: "any" (TA), "lt5" | "5to6" | "gt6" (FT)
+
+const DATA = {
+
+  // ── TA — Internationally Recruited IP ──────────────────────────────────────
+  "TA|Intl-IP|any": [
+    { section:"Travel & Relocation", name:"Repatriation travel", detail:"UNICEF arranges travel from duty station to place of recruitment + 25 kg excess baggage allowance.", ref:"Travel Policy", status:"Eligible" },
+    { section:"Travel & Relocation", name:"Repatriation travel lump sum", detail:"75% of the lowest unrestrictive airfare per UNICEF liability. Must be requested before travel takes place.", ref:"Repatriation Lump Sum Policy", status:"Eligible" },
+    { section:"Travel & Relocation", name:"Unaccompanied shipment", detail:"100 kg by air + shipment insurance of USD 1,600.", ref:"Unaccompanied Shipment Policy", status:"Eligible" },
+    { section:"Travel & Relocation", name:"Shipment lump sum (relocation grant in lieu)", detail:"USD 1,500. This is an alternative to the shipment option — choose one, not both.", ref:"Relocation Grant Policy", status:"Eligible" },
+    { section:"Travel & Relocation", name:"Removal of household goods (container)", detail:"Not applicable for Temporary Appointments.", ref:"", status:"NA" },
+    { section:"Leave & Working Time", name:"Annual leave balance", detail:"Paid out up to a maximum of 18 days.", ref:"Staff Rules", status:"Eligible" },
+    { section:"Leave & Working Time", name:"Compensatory time off (G staff only)", detail:"Up to 40 hours maximum, plus hours accumulated during the last 4 months of employment.", ref:"Overtime Policy", status:"Conditional" },
+    { section:"Leave & Working Time", name:"Travel time (outside contract duration)", detail:"Applicable if repatriation travel occurs outside the contract duration.", ref:"Travel Time Policy", status:"Conditional" },
+    { section:"Separation Payments", name:"Repatriation grant", detail:"Not applicable for Temporary Appointments.", ref:"", status:"NA" },
+    { section:"Separation Payments", name:"Separation payment / Termination indemnity", detail:"Not applicable for Temporary Appointments.", ref:"", status:"NA" },
+    { section:"Separation Payments", name:"Notice compensation", detail:"Compensation equivalent to the delay in issuing the abolishment notification, up to a maximum of 15 calendar days.", ref:"Separation Policy", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"Health insurance (CIGNA/Aetna)", detail:"Coverage expires at the end of your last month of employment with UNICEF — not your last working day.", ref:"Insurance Policy", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"Pension (UNJSPF)", detail:"Applicable as per UNJSPF rules. Email requestuidonly@unjspf.org to obtain your UID, then log in at member.unjspf.org.", ref:"Pension Knowledge Article", status:"Eligible" },
+    { section:"Benefits & Post-Separation", name:"After-Service Health Insurance (ASHI)", detail:"May be eligible if you qualify for retirement and receive a monthly pension benefit. Check the ASHI Knowledge Article.", ref:"ASHI Knowledge Article", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"After-Service Life Insurance (ASLI)", detail:"May be eligible if you qualify for retirement and receive a monthly pension benefit. Check the ASLI Knowledge Article.", ref:"ASLI Knowledge Article", status:"Conditional" },
+  ],
+
+  // ── TA — Local Staff ───────────────────────────────────────────────────────
+  "TA|Local-Staff|any": [
+    { section:"Travel & Relocation", name:"Repatriation travel", detail:"Not applicable for locally recruited staff.", ref:"", status:"NA" },
+    { section:"Travel & Relocation", name:"Repatriation travel lump sum", detail:"Not applicable for locally recruited staff.", ref:"", status:"NA" },
+    { section:"Travel & Relocation", name:"Unaccompanied shipment", detail:"Not applicable for locally recruited staff.", ref:"", status:"NA" },
+    { section:"Travel & Relocation", name:"Shipment lump sum (relocation grant in lieu)", detail:"Not applicable for locally recruited staff.", ref:"", status:"NA" },
+    { section:"Leave & Working Time", name:"Annual leave balance", detail:"Paid out up to a maximum of 18 days.", ref:"Staff Rules", status:"Eligible" },
+    { section:"Leave & Working Time", name:"Compensatory time off (G staff only)", detail:"Up to 40 hours maximum, plus hours accumulated during the last 4 months of employment.", ref:"Overtime Policy", status:"Conditional" },
+    { section:"Leave & Working Time", name:"Travel time", detail:"Not applicable for local staff.", ref:"", status:"NA" },
+    { section:"Separation Payments", name:"Repatriation grant", detail:"Not applicable for local staff.", ref:"", status:"NA" },
+    { section:"Separation Payments", name:"Separation payment / Termination indemnity", detail:"Not applicable for Temporary Appointments.", ref:"", status:"NA" },
+    { section:"Separation Payments", name:"Notice compensation", detail:"Compensation equivalent to the delay in issuing the abolishment notification, up to a maximum of 15 calendar days.", ref:"Separation Policy", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"Health insurance (CIGNA/Aetna)", detail:"Coverage expires at the end of your last month of employment with UNICEF.", ref:"Insurance Policy", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"Pension (UNJSPF)", detail:"Applicable as per UNJSPF rules. Email requestuidonly@unjspf.org to obtain your UID, then log in at member.unjspf.org.", ref:"Pension Knowledge Article", status:"Eligible" },
+    { section:"Benefits & Post-Separation", name:"After-Service Health Insurance (ASHI)", detail:"May be eligible if you qualify for retirement and receive a monthly pension benefit. Check the ASHI Knowledge Article.", ref:"ASHI Knowledge Article", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"After-Service Life Insurance (ASLI)", detail:"May be eligible if you qualify for retirement and receive a monthly pension benefit. Check the ASLI Knowledge Article.", ref:"ASLI Knowledge Article", status:"Conditional" },
+  ],
+
+  // ── TA — JPO ──────────────────────────────────────────────────────────────
+  "TA|JPO|any": [
+    { section:"Travel & Relocation", name:"Repatriation travel", detail:"UNICEF arranges travel from duty station to place of recruitment + 25 kg excess baggage allowance.", ref:"Travel Policy", status:"Eligible" },
+    { section:"Travel & Relocation", name:"Repatriation travel lump sum", detail:"75% of the lowest unrestrictive airfare per UNICEF liability. Must be requested before travel takes place.", ref:"Repatriation Lump Sum Policy", status:"Eligible" },
+    { section:"Travel & Relocation", name:"Unaccompanied shipment (JPO rates)", detail:"600 kg (staff member) + 250 kg (first eligible family member) + 150 kg (each additional eligible family member) + USD 16,000 shipment insurance.", ref:"Unaccompanied Shipment Policy", status:"Eligible" },
+    { section:"Travel & Relocation", name:"Shipment lump sum (relocation grant in lieu)", detail:"USD 9,000 (single rate) or USD 12,000 (family rate). This is an alternative to the shipment option.", ref:"Relocation Grant Policy", status:"Eligible" },
+    { section:"Leave & Working Time", name:"Annual leave balance", detail:"Paid out up to a maximum of 18 days.", ref:"Staff Rules", status:"Eligible" },
+    { section:"Leave & Working Time", name:"Compensatory time off (G staff only)", detail:"Up to 40 hours maximum, plus hours accumulated during the last 4 months of employment.", ref:"Overtime Policy", status:"Conditional" },
+    { section:"Leave & Working Time", name:"Travel time (outside contract duration)", detail:"Applicable if repatriation travel occurs outside the contract duration.", ref:"Travel Time Policy", status:"Conditional" },
+    { section:"Separation Payments", name:"Repatriation grant", detail:"Not applicable for Temporary Appointments.", ref:"", status:"NA" },
+    { section:"Separation Payments", name:"Separation payment / Termination indemnity", detail:"Not applicable for Temporary Appointments.", ref:"", status:"NA" },
+    { section:"Separation Payments", name:"Notice compensation", detail:"Compensation equivalent to the delay in issuing the abolishment notification, up to a maximum of 15 calendar days.", ref:"Separation Policy", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"Health insurance (CIGNA/Aetna)", detail:"Coverage expires at the end of your last month of employment with UNICEF.", ref:"Insurance Policy", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"Pension (UNJSPF)", detail:"Applicable as per UNJSPF rules. Email requestuidonly@unjspf.org to obtain your UID, then log in at member.unjspf.org.", ref:"Pension Knowledge Article", status:"Eligible" },
+    { section:"Benefits & Post-Separation", name:"After-Service Health Insurance (ASHI)", detail:"May be eligible if you qualify for retirement and receive a monthly pension benefit.", ref:"ASHI Knowledge Article", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"After-Service Life Insurance (ASLI)", detail:"May be eligible if you qualify for retirement and receive a monthly pension benefit.", ref:"ASLI Knowledge Article", status:"Conditional" },
+  ],
+
+  // ── TA — Locally Recruited IP ─────────────────────────────────────────────
+  "TA|Locally-Recruited-IP|any": [
+    { section:"Travel & Relocation", name:"Repatriation travel", detail:"Not applicable, unless home leave location differs from place of recruitment.", ref:"Travel Policy", status:"NA" },
+    { section:"Travel & Relocation", name:"Repatriation travel lump sum", detail:"Not applicable, unless home leave location differs from place of recruitment.", ref:"", status:"NA" },
+    { section:"Travel & Relocation", name:"Unaccompanied shipment", detail:"Not applicable, unless shipment is to a home leave location different from the place of recruitment.", ref:"", status:"NA" },
+    { section:"Travel & Relocation", name:"Shipment lump sum (relocation grant in lieu)", detail:"Not applicable, unless shipment is to a home leave location different from the place of recruitment.", ref:"", status:"NA" },
+    { section:"Leave & Working Time", name:"Annual leave balance", detail:"Paid out up to a maximum of 18 days.", ref:"Staff Rules", status:"Eligible" },
+    { section:"Leave & Working Time", name:"Compensatory time off (G staff only)", detail:"Up to 40 hours maximum, plus hours accumulated during the last 4 months of employment.", ref:"Overtime Policy", status:"Conditional" },
+    { section:"Leave & Working Time", name:"Travel time", detail:"Not applicable, unless home leave location differs from place of recruitment and travel occurs outside the contract duration.", ref:"", status:"NA" },
+    { section:"Separation Payments", name:"Repatriation grant", detail:"Not applicable for locally recruited IP.", ref:"", status:"NA" },
+    { section:"Separation Payments", name:"Separation payment / Termination indemnity", detail:"Not applicable for Temporary Appointments.", ref:"", status:"NA" },
+    { section:"Separation Payments", name:"Notice compensation", detail:"Compensation equivalent to the delay in issuing the abolishment notification, up to a maximum of 15 calendar days.", ref:"Separation Policy", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"Health insurance (CIGNA/Aetna)", detail:"Coverage expires at the end of your last month of employment with UNICEF.", ref:"Insurance Policy", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"Pension (UNJSPF)", detail:"Applicable as per UNJSPF rules. Email requestuidonly@unjspf.org to obtain your UID.", ref:"Pension Knowledge Article", status:"Eligible" },
+    { section:"Benefits & Post-Separation", name:"After-Service Health Insurance (ASHI)", detail:"May be eligible if you qualify for retirement and receive a monthly pension benefit.", ref:"ASHI Knowledge Article", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"After-Service Life Insurance (ASLI)", detail:"May be eligible if you qualify for retirement and receive a monthly pension benefit.", ref:"ASLI Knowledge Article", status:"Conditional" },
+  ],
+
+  // ── FT — Internationally Recruited IP — Under 5 years ────────────────────
+  "FT|Intl-IP|lt5": [
+    { section:"Travel & Relocation", name:"Repatriation travel", detail:"UNICEF arranges travel from duty station to place of recruitment or home leave + 25 kg excess baggage.", ref:"Travel Policy", status:"Eligible" },
+    { section:"Travel & Relocation", name:"Repatriation travel lump sum", detail:"75% of the lowest unrestrictive airfare per UNICEF liability. Must be requested before travel takes place.", ref:"Repatriation Lump Sum Policy", status:"Eligible" },
+    { section:"Travel & Relocation", name:"Unaccompanied shipment — without dependants", detail:"Standard 20-foot container (33.2 cubic metres) + USD 16,000 shipment insurance.", ref:"Unaccompanied Shipment Policy", status:"Eligible" },
+    { section:"Travel & Relocation", name:"Unaccompanied shipment — with dependants at duty station", detail:"Standard 40-foot container (67.7 cubic metres) + USD 16,000 shipment insurance.", ref:"Unaccompanied Shipment Policy", status:"Eligible" },
+    { section:"Travel & Relocation", name:"Shipment lump sum (relocation grant in lieu)", detail:"USD 13,000 (single rate) or USD 18,000 (family rate). Choose shipment or lump sum, not both.", ref:"Relocation Grant Policy", status:"Eligible" },
+    { section:"Leave & Working Time", name:"Annual leave balance", detail:"Paid out up to a maximum of 60 days.", ref:"Staff Rules", status:"Eligible" },
+    { section:"Leave & Working Time", name:"Compensatory time off (G staff only)", detail:"Up to 40 hours maximum, plus hours accumulated during the last 4 months of employment.", ref:"Overtime Policy", status:"Conditional" },
+    { section:"Leave & Working Time", name:"Travel time (outside contract duration)", detail:"Applicable if repatriation travel occurs outside the contract duration.", ref:"Travel Time Policy", status:"Conditional" },
+    { section:"Separation Payments", name:"Repatriation grant", detail:"Not applicable — requires a minimum of 5 years of continuous active service.", ref:"Repatriation Grant KA", status:"NA" },
+    { section:"Separation Payments", name:"Separation payment / Termination indemnity", detail:"Not applicable — requires a minimum of 6 years of continuous active service.", ref:"", status:"NA" },
+    { section:"Separation Payments", name:"Notice compensation", detail:"Compensation equivalent to the delay in issuing the abolishment notification, up to a maximum of 6 months.", ref:"Separation Policy", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"Health insurance (CIGNA/Aetna)", detail:"Coverage expires at the end of your last month of employment with UNICEF.", ref:"Insurance Policy", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"Pension (UNJSPF)", detail:"Applicable as per UNJSPF rules. Email requestuidonly@unjspf.org to obtain your UID.", ref:"Pension Knowledge Article", status:"Eligible" },
+    { section:"Benefits & Post-Separation", name:"After-Service Health Insurance (ASHI)", detail:"May be eligible if you qualify for retirement and receive a monthly pension benefit.", ref:"ASHI Knowledge Article", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"After-Service Life Insurance (ASLI)", detail:"May be eligible if you qualify for retirement and receive a monthly pension benefit.", ref:"ASLI Knowledge Article", status:"Conditional" },
+  ],
+
+  // ── FT — Internationally Recruited IP — 5 to 6 years ─────────────────────
+  "FT|Intl-IP|5to6": [
+    { section:"Travel & Relocation", name:"Repatriation travel", detail:"UNICEF arranges travel from duty station to place of recruitment or home leave + 25 kg excess baggage.", ref:"Travel Policy", status:"Eligible" },
+    { section:"Travel & Relocation", name:"Repatriation travel lump sum", detail:"75% of the lowest unrestrictive airfare per UNICEF liability. Must be requested before travel takes place.", ref:"Repatriation Lump Sum Policy", status:"Eligible" },
+    { section:"Travel & Relocation", name:"Unaccompanied shipment — without dependants", detail:"Standard 20-foot container (33.2 cubic metres) + USD 16,000 shipment insurance.", ref:"Unaccompanied Shipment Policy", status:"Eligible" },
+    { section:"Travel & Relocation", name:"Unaccompanied shipment — with dependants at duty station", detail:"Standard 40-foot container (67.7 cubic metres) + USD 16,000 shipment insurance.", ref:"Unaccompanied Shipment Policy", status:"Eligible" },
+    { section:"Travel & Relocation", name:"Shipment lump sum (relocation grant in lieu)", detail:"USD 13,000 (single rate) or USD 18,000 (family rate). Choose shipment or lump sum, not both.", ref:"Relocation Grant Policy", status:"Eligible" },
+    { section:"Leave & Working Time", name:"Annual leave balance", detail:"Paid out up to a maximum of 60 days.", ref:"Staff Rules", status:"Eligible" },
+    { section:"Leave & Working Time", name:"Compensatory time off (G staff only)", detail:"Up to 40 hours maximum, plus hours accumulated during the last 4 months of employment.", ref:"Overtime Policy", status:"Conditional" },
+    { section:"Leave & Working Time", name:"Travel time (outside contract duration)", detail:"Applicable if repatriation travel occurs outside the contract duration.", ref:"Travel Time Policy", status:"Conditional" },
+    { section:"Separation Payments", name:"Repatriation grant", detail:"Eligible — continuous active service of 5 years or more qualifies. Check the Repatriation Grant Knowledge Article for the calculation method.", ref:"Repatriation Grant KA", status:"Eligible" },
+    { section:"Separation Payments", name:"Separation payment / Termination indemnity", detail:"Not applicable — requires a minimum of 6 years of continuous active service.", ref:"", status:"NA" },
+    { section:"Separation Payments", name:"Notice compensation", detail:"Compensation equivalent to the delay in issuing the abolishment notification, up to a maximum of 6 months.", ref:"Separation Policy", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"Health insurance (CIGNA/Aetna)", detail:"Coverage expires at the end of your last month of employment with UNICEF.", ref:"Insurance Policy", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"Pension (UNJSPF)", detail:"Applicable as per UNJSPF rules. Email requestuidonly@unjspf.org to obtain your UID.", ref:"Pension Knowledge Article", status:"Eligible" },
+    { section:"Benefits & Post-Separation", name:"After-Service Health Insurance (ASHI)", detail:"May be eligible if you qualify for retirement and receive a monthly pension benefit.", ref:"ASHI Knowledge Article", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"After-Service Life Insurance (ASLI)", detail:"May be eligible if you qualify for retirement and receive a monthly pension benefit.", ref:"ASLI Knowledge Article", status:"Conditional" },
+  ],
+
+  // ── FT — Internationally Recruited IP — 6+ years ──────────────────────────
+  "FT|Intl-IP|gt6": [
+    { section:"Travel & Relocation", name:"Repatriation travel", detail:"UNICEF arranges travel from duty station to place of recruitment or home leave + 25 kg excess baggage.", ref:"Travel Policy", status:"Eligible" },
+    { section:"Travel & Relocation", name:"Repatriation travel lump sum", detail:"75% of the lowest unrestrictive airfare per UNICEF liability. Must be requested before travel takes place.", ref:"Repatriation Lump Sum Policy", status:"Eligible" },
+    { section:"Travel & Relocation", name:"Unaccompanied shipment — without dependants", detail:"Standard 20-foot container (33.2 cubic metres) + USD 16,000 shipment insurance.", ref:"Unaccompanied Shipment Policy", status:"Eligible" },
+    { section:"Travel & Relocation", name:"Unaccompanied shipment — with dependants at duty station", detail:"Standard 40-foot container (67.7 cubic metres) + USD 16,000 shipment insurance.", ref:"Unaccompanied Shipment Policy", status:"Eligible" },
+    { section:"Travel & Relocation", name:"Shipment lump sum (relocation grant in lieu)", detail:"USD 13,000 (single rate) or USD 18,000 (family rate). Choose shipment or lump sum, not both.", ref:"Relocation Grant Policy", status:"Eligible" },
+    { section:"Leave & Working Time", name:"Annual leave balance", detail:"Paid out up to a maximum of 60 days.", ref:"Staff Rules", status:"Eligible" },
+    { section:"Leave & Working Time", name:"Compensatory time off (G staff only)", detail:"Up to 40 hours maximum, plus hours accumulated during the last 4 months of employment.", ref:"Overtime Policy", status:"Conditional" },
+    { section:"Leave & Working Time", name:"Travel time (outside contract duration)", detail:"Applicable if repatriation travel occurs outside the contract duration.", ref:"Travel Time Policy", status:"Conditional" },
+    { section:"Separation Payments", name:"Repatriation grant", detail:"Eligible — continuous active service of 5 years or more qualifies. Check the Repatriation Grant Knowledge Article for the calculation method.", ref:"Repatriation Grant KA", status:"Eligible" },
+    { section:"Separation Payments", name:"Separation payment / Termination indemnity", detail:"Eligible — continuous active service of 6 years or more qualifies. You must sign the No Contest Agreement. Refer to Separation Policy, Annex 1, page 22 for the calculation.", ref:"Separation Policy Annex 1", status:"Eligible" },
+    { section:"Separation Payments", name:"Notice compensation", detail:"Compensation equivalent to the delay in issuing the abolishment notification, up to a maximum of 6 months.", ref:"Separation Policy", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"Health insurance (CIGNA/Aetna)", detail:"Coverage expires at the end of your last month of employment with UNICEF.", ref:"Insurance Policy", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"Pension (UNJSPF)", detail:"Applicable as per UNJSPF rules. Email requestuidonly@unjspf.org to obtain your UID.", ref:"Pension Knowledge Article", status:"Eligible" },
+    { section:"Benefits & Post-Separation", name:"After-Service Health Insurance (ASHI)", detail:"May be eligible if you qualify for retirement and receive a monthly pension benefit.", ref:"ASHI Knowledge Article", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"After-Service Life Insurance (ASLI)", detail:"May be eligible if you qualify for retirement and receive a monthly pension benefit.", ref:"ASLI Knowledge Article", status:"Conditional" },
+  ],
+
+  // ── FT — Local Staff ──────────────────────────────────────────────────────
+  "FT|Local-Staff|lt5": [
+    { section:"Travel & Relocation", name:"Repatriation travel", detail:"Not applicable for locally recruited staff, unless home leave is in a different location from place of recruitment.", ref:"", status:"NA" },
+    { section:"Travel & Relocation", name:"Unaccompanied shipment", detail:"Not applicable, unless exceptionally granted at time of onboarding or home leave differs from place of recruitment.", ref:"", status:"NA" },
+    { section:"Travel & Relocation", name:"Shipment lump sum (relocation grant in lieu)", detail:"Not applicable for locally recruited staff.", ref:"", status:"NA" },
+    { section:"Leave & Working Time", name:"Annual leave balance", detail:"Paid out up to a maximum of 60 days.", ref:"Staff Rules", status:"Eligible" },
+    { section:"Leave & Working Time", name:"Compensatory time off (G staff only)", detail:"Up to 40 hours maximum, plus hours accumulated during the last 4 months of employment.", ref:"Overtime Policy", status:"Conditional" },
+    { section:"Leave & Working Time", name:"Travel time", detail:"Not applicable, unless home leave differs from place of recruitment and travel occurs outside the contract duration.", ref:"", status:"NA" },
+    { section:"Separation Payments", name:"Repatriation grant", detail:"Not applicable for local staff.", ref:"", status:"NA" },
+    { section:"Separation Payments", name:"Separation payment / Termination indemnity", detail:"Not applicable — requires a minimum of 6 years of continuous active service.", ref:"", status:"NA" },
+    { section:"Separation Payments", name:"Notice compensation", detail:"Compensation equivalent to the delay in issuing the abolishment notification, up to a maximum of 6 months.", ref:"Separation Policy", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"Health insurance (CIGNA/Aetna)", detail:"Coverage expires at the end of your last month of employment with UNICEF.", ref:"Insurance Policy", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"Pension (UNJSPF)", detail:"Applicable as per UNJSPF rules. Email requestuidonly@unjspf.org to obtain your UID.", ref:"Pension Knowledge Article", status:"Eligible" },
+    { section:"Benefits & Post-Separation", name:"After-Service Health Insurance (ASHI)", detail:"May be eligible if you qualify for retirement and receive a monthly pension benefit.", ref:"ASHI Knowledge Article", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"After-Service Life Insurance (ASLI)", detail:"May be eligible if you qualify for retirement and receive a monthly pension benefit.", ref:"ASLI Knowledge Article", status:"Conditional" },
+  ],
+  "FT|Local-Staff|5to6": null, // copy of lt5 for routing — same entitlements, indemnity still NA
+  "FT|Local-Staff|gt6": [
+    { section:"Travel & Relocation", name:"Repatriation travel", detail:"Not applicable for locally recruited staff, unless home leave is in a different location from place of recruitment.", ref:"", status:"NA" },
+    { section:"Travel & Relocation", name:"Unaccompanied shipment", detail:"Not applicable, unless exceptionally granted at time of onboarding or home leave differs from place of recruitment.", ref:"", status:"NA" },
+    { section:"Travel & Relocation", name:"Shipment lump sum (relocation grant in lieu)", detail:"Not applicable for locally recruited staff.", ref:"", status:"NA" },
+    { section:"Leave & Working Time", name:"Annual leave balance", detail:"Paid out up to a maximum of 60 days.", ref:"Staff Rules", status:"Eligible" },
+    { section:"Leave & Working Time", name:"Compensatory time off (G staff only)", detail:"Up to 40 hours maximum, plus hours accumulated during the last 4 months of employment.", ref:"Overtime Policy", status:"Conditional" },
+    { section:"Leave & Working Time", name:"Travel time", detail:"Not applicable, unless home leave differs from place of recruitment and travel occurs outside the contract duration.", ref:"", status:"NA" },
+    { section:"Separation Payments", name:"Repatriation grant", detail:"Not applicable for local staff.", ref:"", status:"NA" },
+    { section:"Separation Payments", name:"Separation payment / Termination indemnity", detail:"Eligible — continuous active service of 6 years or more qualifies. You must sign the No Contest Agreement. Refer to Separation Policy, Annex 1, page 22.", ref:"Separation Policy Annex 1", status:"Eligible" },
+    { section:"Separation Payments", name:"Notice compensation", detail:"Compensation equivalent to the delay in issuing the abolishment notification, up to a maximum of 6 months.", ref:"Separation Policy", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"Health insurance (CIGNA/Aetna)", detail:"Coverage expires at the end of your last month of employment with UNICEF.", ref:"Insurance Policy", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"Pension (UNJSPF)", detail:"Applicable as per UNJSPF rules. Email requestuidonly@unjspf.org to obtain your UID.", ref:"Pension Knowledge Article", status:"Eligible" },
+    { section:"Benefits & Post-Separation", name:"After-Service Health Insurance (ASHI)", detail:"May be eligible if you qualify for retirement and receive a monthly pension benefit.", ref:"ASHI Knowledge Article", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"After-Service Life Insurance (ASLI)", detail:"May be eligible if you qualify for retirement and receive a monthly pension benefit.", ref:"ASLI Knowledge Article", status:"Conditional" },
+  ],
+
+  // ── FT — Locally Recruited IP ─────────────────────────────────────────────
+  "FT|Locally-Recruited-IP|lt5": [
+    { section:"Travel & Relocation", name:"Repatriation travel", detail:"Not applicable, unless home leave is in a different location from place of recruitment.", ref:"Travel Policy", status:"NA" },
+    { section:"Travel & Relocation", name:"Unaccompanied shipment", detail:"Not applicable, unless shipment is to a home leave location different from the place of recruitment.", ref:"", status:"NA" },
+    { section:"Travel & Relocation", name:"Shipment lump sum (relocation grant in lieu)", detail:"Not applicable, unless home leave differs from place of recruitment.", ref:"", status:"NA" },
+    { section:"Leave & Working Time", name:"Annual leave balance", detail:"Paid out up to a maximum of 60 days.", ref:"Staff Rules", status:"Eligible" },
+    { section:"Leave & Working Time", name:"Compensatory time off (G staff only)", detail:"Up to 40 hours maximum, plus hours accumulated during the last 4 months of employment.", ref:"Overtime Policy", status:"Conditional" },
+    { section:"Leave & Working Time", name:"Travel time", detail:"Not applicable, unless home leave differs from place of recruitment and travel occurs outside the contract duration.", ref:"", status:"NA" },
+    { section:"Separation Payments", name:"Repatriation grant", detail:"Not applicable for locally recruited IP.", ref:"", status:"NA" },
+    { section:"Separation Payments", name:"Separation payment / Termination indemnity", detail:"Not applicable — requires a minimum of 6 years of continuous active service.", ref:"", status:"NA" },
+    { section:"Separation Payments", name:"Notice compensation", detail:"Compensation equivalent to the delay in issuing the abolishment notification, up to a maximum of 6 months.", ref:"Separation Policy", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"Health insurance (CIGNA/Aetna)", detail:"Coverage expires at the end of your last month of employment with UNICEF.", ref:"Insurance Policy", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"Pension (UNJSPF)", detail:"Applicable as per UNJSPF rules. Email requestuidonly@unjspf.org to obtain your UID.", ref:"Pension Knowledge Article", status:"Eligible" },
+    { section:"Benefits & Post-Separation", name:"After-Service Health Insurance (ASHI)", detail:"May be eligible if you qualify for retirement and receive a monthly pension benefit.", ref:"ASHI Knowledge Article", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"After-Service Life Insurance (ASLI)", detail:"May be eligible if you qualify for retirement and receive a monthly pension benefit.", ref:"ASLI Knowledge Article", status:"Conditional" },
+  ],
+  "FT|Locally-Recruited-IP|5to6": null,
+  "FT|Locally-Recruited-IP|gt6": [
+    { section:"Travel & Relocation", name:"Repatriation travel", detail:"Not applicable, unless home leave is in a different location from place of recruitment.", ref:"Travel Policy", status:"NA" },
+    { section:"Travel & Relocation", name:"Unaccompanied shipment", detail:"Not applicable, unless shipment is to a home leave location different from the place of recruitment.", ref:"", status:"NA" },
+    { section:"Travel & Relocation", name:"Shipment lump sum (relocation grant in lieu)", detail:"Not applicable, unless home leave differs from place of recruitment.", ref:"", status:"NA" },
+    { section:"Leave & Working Time", name:"Annual leave balance", detail:"Paid out up to a maximum of 60 days.", ref:"Staff Rules", status:"Eligible" },
+    { section:"Leave & Working Time", name:"Compensatory time off (G staff only)", detail:"Up to 40 hours maximum, plus hours accumulated during the last 4 months of employment.", ref:"Overtime Policy", status:"Conditional" },
+    { section:"Leave & Working Time", name:"Travel time", detail:"Not applicable, unless home leave differs from place of recruitment and travel occurs outside the contract duration.", ref:"", status:"NA" },
+    { section:"Separation Payments", name:"Repatriation grant", detail:"Not applicable for locally recruited IP.", ref:"", status:"NA" },
+    { section:"Separation Payments", name:"Separation payment / Termination indemnity", detail:"Eligible — continuous active service of 6 years or more qualifies. You must sign the No Contest Agreement. Refer to Separation Policy, Annex 1, page 22.", ref:"Separation Policy Annex 1", status:"Eligible" },
+    { section:"Separation Payments", name:"Notice compensation", detail:"Compensation equivalent to the delay in issuing the abolishment notification, up to a maximum of 6 months.", ref:"Separation Policy", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"Health insurance (CIGNA/Aetna)", detail:"Coverage expires at the end of your last month of employment with UNICEF.", ref:"Insurance Policy", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"Pension (UNJSPF)", detail:"Applicable as per UNJSPF rules. Email requestuidonly@unjspf.org to obtain your UID.", ref:"Pension Knowledge Article", status:"Eligible" },
+    { section:"Benefits & Post-Separation", name:"After-Service Health Insurance (ASHI)", detail:"May be eligible if you qualify for retirement and receive a monthly pension benefit.", ref:"ASHI Knowledge Article", status:"Conditional" },
+    { section:"Benefits & Post-Separation", name:"After-Service Life Insurance (ASLI)", detail:"May be eligible if you qualify for retirement and receive a monthly pension benefit.", ref:"ASLI Knowledge Article", status:"Conditional" },
+  ],
+};
+
+// Fallback for null keys (FT Local 5to6 same as lt5)
+DATA["FT|Local-Staff|5to6"] = DATA["FT|Local-Staff|lt5"];
+DATA["FT|Locally-Recruited-IP|5to6"] = DATA["FT|Locally-Recruited-IP|lt5"];
+
+// ── PROFILE LABELS ───────────────────────────────────────────────────────────
+const PROFILE_LABELS = {
+  "TA": "Temporary Appointment (TA)",
+  "FT": "Fixed-Term / Continuing / Permanent",
+  "Intl-IP": "Internationally Recruited IP",
+  "Local-Staff": "Local Staff",
+  "JPO": "Junior Professional Officer (JPO)",
+  "Locally-Recruited-IP": "Locally Recruited IP",
+  "lt5": "under 5 years of service",
+  "5to6": "5–6 years of service",
+  "gt6": "6 or more years of service",
+  "any": ""
+};
+
+const STEP2_OPTS = {
+  TA: [
+    { key: "Intl-IP",            label: "Internationally recruited IP" },
+    { key: "Locally-Recruited-IP", label: "Locally recruited IP" },
+    { key: "Local-Staff",        label: "Local staff" },
+    { key: "JPO",                label: "JPO" },
+  ],
+  FT: [
+    { key: "Intl-IP",            label: "Internationally recruited IP" },
+    { key: "Locally-Recruited-IP", label: "Locally recruited IP" },
+    { key: "Local-Staff",        label: "Local staff" },
+  ]
+};
+
+// ── STATE ────────────────────────────────────────────────────────────────────
+let state = { contract: null, staff: null, years: null };
+
+// ── STEP 1 ───────────────────────────────────────────────────────────────────
+function selectStep1(val) {
+  state = { contract: val, staff: null, years: null };
+  document.querySelectorAll('#step1 .opt').forEach(o => o.classList.remove('selected'));
+  document.getElementById('opt-' + val.toLowerCase()).classList.add('selected');
+  setStepDone(1);
+
+  // Populate step 2 options
+  const opts = STEP2_OPTS[val];
+  const s2 = document.getElementById('step2-opts');
+  s2.innerHTML = opts.map(o =>
+    `<div class="opt" onclick="selectStep2('${o.key}')" id="opt-sc-${o.key}">${o.label}</div>`
+  ).join('');
+
+  // Show/hide step 3
+  document.getElementById('step3').style.display = val === 'FT' ? '' : 'none';
+
+  unlockStep(2);
+  lockStep(3);
+  hideResults();
+  updateProgress();
+}
+
+// ── STEP 2 ───────────────────────────────────────────────────────────────────
+function selectStep2(val) {
+  state.staff = val;
+  state.years = null;
+  document.querySelectorAll('#step2-opts .opt').forEach(o => o.classList.remove('selected'));
+  document.getElementById('opt-sc-' + val).classList.add('selected');
+  setStepDone(2);
+
+  if (state.contract === 'TA') {
+    // No step 3 needed — show results immediately
+    setStepDone(3, true);
+    showResults('any');
+  } else {
+    unlockStep(3);
+    hideResults();
+  }
+  updateProgress();
+}
+
+// ── STEP 3 ───────────────────────────────────────────────────────────────────
+function selectStep3(val) {
+  state.years = val;
+  document.querySelectorAll('#step3 .opt').forEach(o => o.classList.remove('selected'));
+  document.getElementById('opt-' + val).classList.add('selected');
+  setStepDone(3);
+  showResults(val);
+  updateProgress();
+}
+
+// ── RESULTS ──────────────────────────────────────────────────────────────────
+function showResults(yearsKey) {
+  const key = `${state.contract}|${state.staff}|${yearsKey}`;
+  const entries = DATA[key];
+  if (!entries) return;
+
+  // Build persona label
+  let persona = PROFILE_LABELS[state.contract];
+  if (state.staff) persona += ' · ' + PROFILE_LABELS[state.staff];
+  if (yearsKey !== 'any') persona += ' · ' + PROFILE_LABELS[yearsKey];
+
+  document.getElementById('results-title').textContent = 'Your entitlements';
+  document.getElementById('results-persona').textContent = persona;
+
+  // Group by section
+  const sections = {};
+  entries.forEach(e => {
+    if (!sections[e.section]) sections[e.section] = [];
+    sections[e.section].push(e);
+  });
+
+  let html = '';
+  for (const [sec, rows] of Object.entries(sections)) {
+    html += `<div class="section-group">
+      <div class="section-label">${sec}</div>
+      <table class="ent-table">
+        <thead><tr>
+          <th style="width:28%">Entitlement</th>
+          <th>Details</th>
+          <th>Status</th>
+        </tr></thead>
+        <tbody>`;
+    rows.forEach(r => {
+      html += `<tr>
+        <td><span class="ent-name">${r.name}</span>${r.ref ? `<span class="ent-ref">${r.ref}</span>` : ''}</td>
+        <td><span class="ent-detail">${r.detail}</span></td>
+        <td class="td-status"><span class="status-pill pill-${r.status.replace('/','')}">${r.status === 'NA' ? 'N/A' : r.status}</span></td>
+      </tr>`;
+    });
+    html += `</tbody></table></div>`;
+  }
+
+  document.getElementById('results-body').innerHTML = html;
+
+  // Contextual notes
+  const showRepat = entries.some(e => e.name.includes('Repatriation grant') && e.status === 'Eligible');
+  const showIndem = entries.some(e => e.name.includes('Termination indemnity') && e.status === 'Eligible');
+  document.getElementById('service-note-repatriation').classList.toggle('show', showRepat);
+  document.getElementById('service-note-indemnity').classList.toggle('show', showIndem);
+
+  document.getElementById('results-panel').classList.remove('hidden');
+  document.getElementById('results-panel').classList.add('fade-in');
+  setTimeout(() => {
+    document.getElementById('results-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 100);
+}
+
+function hideResults() {
+  document.getElementById('results-panel').classList.add('hidden');
+  document.getElementById('service-note-repatriation').classList.remove('show');
+  document.getElementById('service-note-indemnity').classList.remove('show');
+}
+
+// ── STEP HELPERS ─────────────────────────────────────────────────────────────
+function unlockStep(n) {
+  document.getElementById('step' + n).classList.remove('locked');
+  document.getElementById('snum' + n).classList.add('active');
+}
+function lockStep(n) {
+  const el = document.getElementById('step' + n);
+  if (el) el.classList.add('locked');
+  const num = document.getElementById('snum' + n);
+  if (num) { num.classList.remove('active'); num.classList.remove('done'); }
+}
+function setStepDone(n, skip) {
+  const num = document.getElementById('snum' + n);
+  if (!num) return;
+  num.classList.remove('active');
+  if (!skip) num.classList.add('done');
+}
+
+function updateProgress() {
+  let filled = 0;
+  const total = state.contract === 'FT' ? 3 : 2;
+  if (state.contract) filled++;
+  if (state.staff) filled++;
+  if (state.contract === 'FT' && state.years) filled++;
+  const pct = Math.round((filled / total) * 100);
+  document.getElementById('prog-fill').style.width = pct + '%';
+  const labels = ['Step 1 of 3 — Select your contract type to begin', 'Step 2 of 3 — Select your staff category', 'Step 3 of 3 — Select your years of service', 'Complete — your entitlements are shown below'];
+  document.getElementById('prog-label').textContent = filled < total ? labels[filled] : labels[3];
+}
+
+function resetAll() {
+  state = { contract: null, staff: null, years: null };
+  document.querySelectorAll('.opt').forEach(o => o.classList.remove('selected'));
+  document.getElementById('step2-opts').innerHTML = '';
+  lockStep(2); lockStep(3);
+  document.getElementById('snum1').classList.remove('done');
+  document.getElementById('snum1').classList.add('active');
+  document.getElementById('step3').style.display = '';
+  hideResults();
+  updateProgress();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Init
+document.getElementById('step3').style.display = '';
+lockStep(2); lockStep(3);
+</script>
+</body>
+</html>
