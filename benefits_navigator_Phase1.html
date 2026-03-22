@@ -28,15 +28,15 @@
 
   /* ── HEADER ── */
   .header { background: var(--ud); color: var(--white); padding: 0; }
-  .header-inner { max-width: 900px; margin: 0 auto; padding: 22px 28px 18px; }
-  .header-top { display: flex; align-items: center; gap: 14px; margin-bottom: 6px; }
+  .header-inner { max-width: 900px; margin: 0 auto; padding: 18px 28px 16px; }
+  .header-top { display: flex; align-items: center; gap: 14px; margin-bottom: 1px; }
   .unicef-logo { display: flex; align-items: center; gap: 8px; }
   .logo-mark { width: 36px; height: 36px; border-radius: 50%; background: var(--ub); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .logo-mark svg { width: 20px; height: 20px; }
   .logo-text { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: rgba(255,255,255,0.85); }
   .header-divider { width: 1px; height: 28px; background: rgba(255,255,255,0.2); }
   .header-section { font-size: 11px; color: rgba(255,255,255,0.6); letter-spacing: 0.05em; }
-  .header-title { font-size: 20px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+  .header-title { font-size: 20px; font-weight: 600; color: var(--white); margin-bottom: 2px; }
   .header-sub { font-size: 12px; color: rgba(255,255,255,0.65); }
   .header-bar { height: 4px; background: var(--ub); }
 
@@ -44,32 +44,32 @@
   .main { max-width: 900px; margin: 0 auto; padding: 28px 28px 48px; }
 
   /* ── POLICY NOTICE ── */
-  .policy-notice { background: var(--ul); border: 1px solid var(--ulm); border-radius: var(--radius-sm); padding: 10px 14px; margin-bottom: 24px; display: flex; gap: 10px; align-items: flex-start; font-size: 12px; color: var(--ud); }
+  .policy-notice { background: #F2F4F6; border: 1px solid #D8DCE0; border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 28px; margin-top: 8px; display: flex; gap: 12px; align-items: flex-start; font-size: 12px; color: #3A3A3A; line-height: 1.7; }
   .notice-icon { flex-shrink: 0; margin-top: 1px; }
 
   /* ── NAVIGATOR CARD ── */
   .navigator { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 0; box-shadow: 0 1px 4px rgba(0,63,125,0.06); }
-  .nav-header { background: var(--ub); padding: 14px 20px; }
-  .nav-header-title { font-size: 13px; font-weight: 600; color: var(--white); }
-  .nav-header-sub { font-size: 11px; color: rgba(255,255,255,0.75); margin-top: 2px; }
+  .nav-header { background: var(--ub); padding: 14px 20px; position: relative; overflow: hidden; }
+  .nav-header-title { font-size: 15px; font-weight: 600; color: var(--white); }
+  .nav-header-sub { font-size: 12px; color: rgba(255,255,255,0.8); margin-top: 3px; }
 
   /* Progress bar */
   .progress-wrap { padding: 14px 20px 0; }
   .progress-track { height: 4px; background: var(--ulm); border-radius: 2px; margin-bottom: 6px; }
   .progress-fill { height: 100%; border-radius: 2px; background: var(--ub); transition: width 0.35s ease; }
-  .progress-label { font-size: 11px; color: var(--muted); }
+  .progress-label { font-size: 12px; color: var(--muted); }
 
   /* Steps */
   .steps { padding: 16px 20px 20px; display: flex; flex-direction: column; gap: 18px; }
   .step { }
   .step-label { font-size: 11px; font-weight: 600; color: var(--ud); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
-  .step-num { width: 20px; height: 20px; border-radius: 50%; background: var(--ud); color: white; font-size: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .step-num { width: 20px; height: 20px; border-radius: 50%; background: var(--ud); color: white; font-size: 11px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .step-num.active { background: var(--ub); }
   .step-num.done { background: var(--t-yes); }
   .options { display: flex; gap: 8px; flex-wrap: wrap; padding-left: 26px; }
-  .opt { padding: 8px 16px; border: 1.5px solid var(--border); border-radius: 20px; cursor: pointer; font-size: 13px; color: var(--muted); background: var(--white); transition: all 0.15s; user-select: none; }
-  .opt:hover { border-color: var(--ub); color: var(--ub); }
-  .opt.selected { background: var(--ub); border-color: var(--ub); color: var(--white); font-weight: 500; }
+  .opt { padding: 7px 15px; border: 1px solid #D0D8DF; border-radius: 20px; cursor: pointer; font-size: 12px; color: #3A3A3A; background: #F2F4F6; transition: all 0.15s; user-select: none; min-height: 32px; display: inline-flex; align-items: center; }
+  .opt:hover { border-color: var(--ud); background: #D6E4F0; color: var(--ud); }
+  .opt.selected { background: var(--ud); border-color: var(--ud); color: var(--white); font-weight: 500; }
   .opt.disabled { opacity: 0.4; pointer-events: none; }
   .step.locked { opacity: 0.45; pointer-events: none; }
 
@@ -83,19 +83,19 @@
 
   /* Section group */
   .section-group { margin-bottom: 16px; }
-  .section-label { font-size: 11px; font-weight: 600; color: var(--ud); text-transform: uppercase; letter-spacing: 0.07em; padding: 7px 12px; background: var(--ul); border: 1px solid var(--ulm); border-radius: var(--radius-sm) var(--radius-sm) 0 0; border-bottom: none; }
+  .section-label { font-size: 12px; font-weight: 600; color: var(--ud); text-transform: uppercase; letter-spacing: 0.07em; padding: 7px 12px; background: var(--ul); border: 1px solid var(--ulm); border-radius: var(--radius-sm) var(--radius-sm) 0 0; border-bottom: none; }
   .ent-table { width: 100%; border-collapse: collapse; border: 1px solid var(--border); border-radius: 0 0 var(--radius-sm) var(--radius-sm); overflow: hidden; }
   .ent-table thead tr { background: #EEF7FC; }
-  .ent-table th { font-size: 11px; font-weight: 600; color: var(--muted); padding: 7px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+  .ent-table th { font-size: 12px; font-weight: 600; color: var(--muted); padding: 7px 12px; text-align: left; border-bottom: 1px solid var(--border); }
   .ent-table th:last-child { text-align: center; width: 100px; }
   .ent-table td { font-size: 12px; padding: 9px 12px; border-bottom: 1px solid #EEF4F8; vertical-align: top; color: var(--text); }
   .ent-table tr:last-child td { border-bottom: none; }
   .ent-table tr:nth-child(even) td { background: #FAFCFE; }
   .ent-name { font-weight: 500; font-size: 13px; color: var(--text); display: block; margin-bottom: 2px; }
   .ent-detail { font-size: 12px; color: var(--muted); line-height: 1.5; }
-  .ent-ref { font-size: 10px; color: var(--ub); margin-top: 3px; display: block; text-decoration: underline; }
+  .ent-ref { font-size: 11px; color: var(--ub); margin-top: 3px; display: block; text-decoration: underline; }
   .ent-ref:hover { color: var(--ud); }
-  .status-pill { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 12px; text-align: center; }
+  .status-pill { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 12px; text-align: center; }
   .pill-Eligible { background: var(--g-yes); color: var(--t-yes); }
   .pill-Conditional { background: var(--g-cond); color: var(--t-cond); }
   .pill-NA { background: var(--g-no); color: var(--t-no); }
@@ -106,30 +106,35 @@
   .service-note.show { display: block; }
 
   /* ── IMPORTANT NOTES ── */
-  .notes-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); margin-top: 8px; margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,63,125,0.06); overflow: hidden; }
-  .notes-header { background: var(--ub); padding: 14px 20px; display: flex; align-items: center; gap: 10px; }
-  .notes-header-title { font-size: 13px; font-weight: 600; color: var(--white); }
-  .notes-header-sub { font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 2px; }
-  .notes-body { padding: 16px 20px; display: flex; flex-direction: column; gap: 10px; }
-  .note-item { display: flex; gap: 12px; align-items: flex-start; padding: 11px 14px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); }
-  .note-icon { width: 30px; height: 30px; border-radius: 6px; background: var(--ul); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
-  .note-content { flex: 1; }
-  .note-label { font-size: 12px; font-weight: 600; color: var(--ud); margin-bottom: 3px; }
-  .note-text { font-size: 12px; color: var(--muted); line-height: 1.6; }
+  .notes-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,63,125,0.06); overflow: hidden; }
+  .notes-header { background: var(--ub); padding: 14px 20px; display: flex; align-items: center; gap: 10px; position: relative; overflow: hidden; }
+  .notes-header-title { font-size: 15px; font-weight: 600; color: var(--white); }
+  .notes-header-sub { font-size: 12px; color: rgba(255,255,255,0.8); margin-top: 3px; }
+  .notes-body { padding: 14px 16px 12px; display: flex; flex-direction: column; gap: 10px; background: var(--card); }
+  .note-item { display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; background: #F2F4F6; border: 1px solid #D0D8DF; border-radius: var(--radius-sm); transition: all 0.18s; }
+  .note-item:hover { border-color: var(--ud); background: #D6E4F0; }
+  .note-icon { width: 39px; height: 39px; border-radius: 8px; background: #E2E8EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .note-content { flex: 1; min-width: 0; }
+  .note-label { font-size: 12px; font-weight: 600; color: #003F7D; line-height: 1.35; margin-bottom: 2px; }
+  .note-text { font-size: 12px; color: #3A3A3A; line-height: 1.6; }
+  .note-text p { margin-bottom: 8px; }
+  .note-text p:last-child { margin-bottom: 0; }
+  .note-text ul { margin: 6px 0 8px 16px; display: flex; flex-direction: column; gap: 4px; }
+  .note-text ul li { list-style: disc; }
   .note-text a { color: var(--ub); text-decoration: underline; }
   .note-text strong { color: var(--text); font-weight: 500; }
 
   /* ── LEGEND ── */
   .legend { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; }
   .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
-  .legend-pill { font-size: 11px; font-weight: 600; padding: 2px 10px; border-radius: 10px; }
+  .legend-pill { font-size: 12px; font-weight: 600; padding: 2px 10px; border-radius: 10px; }
 
   /* ── FAQ ── */
   .faq-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,63,125,0.06); overflow: hidden; }
-  .faq-card-header { background: var(--ub); padding: 14px 20px; display: flex; align-items: center; gap: 10px; }
-  .faq-card-title { font-size: 13px; font-weight: 600; color: var(--white); }
-  .faq-card-sub { font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 2px; }
-  .faq-table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 11px; }
+  .faq-card-header { background: var(--ub); padding: 14px 20px; display: flex; align-items: center; gap: 10px; border-radius: var(--radius) var(--radius) 0 0; position: relative; overflow: hidden; }
+  .faq-card-title { font-size: 15px; font-weight: 600; color: var(--white); }
+  .faq-card-sub { font-size: 12px; color: rgba(255,255,255,0.8); margin-top: 3px; }
+  .faq-table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 12px; }
   .faq-table th { background: #EEF7FC; color: var(--muted); font-weight: 600; padding: 5px 8px; text-align: left; border: 1px solid var(--border); }
   .faq-table td { padding: 5px 8px; border: 1px solid var(--border); color: var(--text); vertical-align: top; line-height: 1.5; }
   .faq-table tr:nth-child(even) td { background: #FAFCFE; }
@@ -139,41 +144,43 @@
   .faq-search-row { display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 7px 12px; background: var(--bg); margin-bottom: 10px; }
   .faq-search-row input { flex: 1; border: none; background: transparent; outline: none; font-size: 13px; color: var(--text); font-family: 'Segoe UI', Arial, sans-serif; }
   .faq-search-row input::placeholder { color: #a0aec0; }
-  .faq-clear-btn { font-size: 11px; color: var(--muted); cursor: pointer; padding: 2px 7px; border-radius: 4px; display: none; white-space: nowrap; }
+  .faq-clear-btn { font-size: 12px; color: var(--muted); cursor: pointer; padding: 2px 7px; border-radius: 4px; display: none; white-space: nowrap; }
   .faq-clear-btn.show { display: block; }
   .faq-clear-btn:hover { background: var(--ul); }
   .faq-tag-row { display: flex; gap: 6px; flex-wrap: wrap; }
-  .faq-tag { font-size: 11px; padding: 4px 10px; border-radius: 20px; border: 0.5px solid var(--border); color: var(--muted); background: var(--white); cursor: pointer; transition: all 0.15s; user-select: none; }
-  .faq-tag:hover { border-color: var(--ub); color: var(--ud); }
-  .faq-tag.active { background: var(--ub); color: #E8F5FB; border-color: var(--ub); font-weight: 500; }
-  .faq-tiles-area { padding: 14px 16px 16px; border-bottom: 0.5px solid var(--border); }
-  .faq-tiles-label { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; }
-  .faq-tile-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; }
-  .faq-tile { border: 0.5px solid var(--border); border-radius: var(--radius-sm); padding: 10px 12px; cursor: pointer; transition: all 0.15s; background: var(--white); }
-  .faq-tile:hover { border-color: var(--ub); background: var(--ul); }
-  .faq-tile.active { border: 1.5px solid var(--ub); background: var(--ul); }
+  .faq-tag { font-size: 12px; padding: 4px 10px; border-radius: 20px; border: 1px solid #D0D8DF; color: var(--muted); background: #F2F4F6; cursor: pointer; transition: all 0.15s; user-select: none; }
+  .faq-tag:hover { border-color: var(--ud); background: #D6E4F0; color: var(--ud); }
+  .faq-tag.active { background: var(--ud); color: #E8F5FB; border-color: var(--ud); font-weight: 500; }
+  .faq-tiles-area { padding: 14px 16px 12px; }
+  .faq-tiles-label { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; }
+  .faq-tile-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; }
+  .faq-tile { border: 1px solid #D0D8DF; border-radius: var(--radius-sm); padding: 12px 14px; cursor: pointer; transition: all 0.18s; background: #F2F4F6; display: flex; align-items: flex-start; gap: 12px; }
+  .faq-tile:hover { border-color: var(--ud); background: #D6E4F0; }
+  .faq-tile.active { border: 1.5px solid #003F7D; background: #D6E4F0; }
   .faq-tile.dim { opacity: 0.35; pointer-events: none; }
-  .faq-tile-icon { width: 26px; height: 26px; border-radius: 6px; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; }
-  .faq-tile-name { font-size: 11px; font-weight: 500; color: var(--text); line-height: 1.35; margin-bottom: 3px; }
-  .faq-tile-count { font-size: 10px; color: var(--muted); }
-  .faq-tile-count.match { color: var(--ud); font-weight: 500; }
+  .faq-tile-icon { width: 39px; height: 39px; border-radius: 8px; background: #E2E8EE !important; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+  .faq-tile-body { flex: 1; min-width: 0; }
+  .faq-tile-name { font-size: 12px; font-weight: 600; color: #003F7D; line-height: 1.35; margin-bottom: 2px; }
+  .faq-tile-sub { font-size: 11px; color: #3A3A3A; line-height: 1.4; margin-bottom: 3px; }
+  .faq-tile-count { font-size: 11px; color: #4A6070; font-weight: 500; }
+  .faq-tile-count.match { color: var(--ud); font-weight: 600; }
   .faq-result-banner { margin-top: 10px; padding: 7px 10px; background: var(--ul); border-radius: var(--radius-sm); font-size: 12px; color: var(--muted); display: none; }
   .faq-result-banner.show { display: block; }
   .faq-result-banner strong { color: var(--text); font-weight: 500; }
   .faq-item { border-bottom: 0.5px solid #EEF4F8; }
   .faq-item:last-child { border-bottom: none; }
   .faq-item.faq-hidden { display: none; }
-  .faq-section-head { font-size: 10px; font-weight: 600; color: var(--ud); text-transform: uppercase; letter-spacing: 0.07em; padding: 9px 20px 7px; background: var(--ul); border-top: 0.5px solid var(--ulm); border-bottom: 0.5px solid var(--ulm); display: flex; align-items: center; gap: 8px; }
+  .faq-section-head { font-size: 11px; font-weight: 600; color: var(--ud); text-transform: uppercase; letter-spacing: 0.07em; padding: 9px 20px 7px; background: var(--ul); border-bottom: 0.5px solid var(--ulm); display: flex; align-items: center; gap: 8px; }
   .faq-section-head.faq-hidden { display: none; }
   .faq-section-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
   .faq-q { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 11px 20px; cursor: pointer; user-select: none; }
   .faq-q:hover { background: var(--ul); }
   .faq-q-left { display: flex; align-items: flex-start; gap: 10px; flex: 1; }
-  .q-tag { font-size: 10px; padding: 2px 7px; border-radius: 10px; flex-shrink: 0; margin-top: 2px; font-weight: 500; }
-  .faq-q-text { font-size: 12px; font-weight: 500; color: var(--text); line-height: 1.5; }
-  .faq-chevron { font-size: 11px; color: var(--muted); flex-shrink: 0; margin-top: 2px; transition: transform 0.2s; }
+  .q-tag { font-size: 11px; padding: 2px 7px; border-radius: 10px; flex-shrink: 0; margin-top: 2px; font-weight: 500; }
+  .faq-q-text { font-size: 13px; font-weight: 600; color: #3A3A3A; line-height: 1.5; }
+  .faq-chevron { font-size: 12px; color: var(--muted); flex-shrink: 0; margin-top: 2px; transition: transform 0.2s; }
   .faq-chevron.open { transform: rotate(180deg); }
-  .faq-a { display: none; padding: 0 44px 12px 80px; font-size: 12px; color: var(--muted); line-height: 1.7; }
+  .faq-a { display: none; padding: 0 44px 14px 80px; font-size: 13px; color: var(--muted); line-height: 1.7; }
   .faq-a.open { display: block; }
   .faq-a p { margin-bottom: 7px; }
   .faq-a p:last-child { margin-bottom: 0; }
@@ -193,7 +200,7 @@
   /* ── DOWNLOAD STRIP ── */
   .download-strip { background: var(--ul); border: 1px solid var(--ulm); border-radius: var(--radius); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
   .dl-text { font-size: 13px; color: var(--ud); font-weight: 500; }
-  .dl-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .dl-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
   .dl-btn { background: var(--ud); color: white; border: none; border-radius: 20px; padding: 8px 20px; font-size: 13px; font-weight: 500; cursor: pointer; transition: background 0.15s; text-decoration: none; display: inline-block; }
   .dl-btn:hover { background: var(--ub); }
 
@@ -228,10 +235,10 @@
       <div style="font-size:13px;font-weight:700;color:rgba(255,255,255,0.95);letter-spacing:0.04em;">People &amp; Culture</div>
     </div>
     <div class="header-title">Separation Benefits &amp; Entitlements Navigator</div>
-    <div class="header-sub" style="margin-top:5px;line-height:1.8;">
-      <span style="color:rgba(255,255,255,0.75);">*Mirror to GSSC Offboarding Resources of:</span><br>
-      <span style="color:rgba(255,255,255,0.6);">1. </span><a href="https://unicef.sharepoint.com/teams/GSSC-Payroll/Offboarding%20Working%20Confidential/Forms/AllItems.aspx?id=%2Fteams%2FGSSC%2DPayroll%2FOffboarding%20Working%20Confidential%2FOFFB%20Management%2FProjects%202025%2FAbolishment%20project%2FApr%202025%20B%26E%20Matrix%20Contract%20end%20date%20and%20abolishment%20coinciding%2Epdf&parent=%2Fteams%2FGSSC%2DPayroll%2FOffboarding%20Working%20Confidential%2FOFFB%20Management%2FProjects%202025%2FAbolishment%20project&p=true&ga=1" target="_blank" style="color:rgba(255,255,255,0.85);text-decoration:underline;">Benefits &amp; Entitlements Matrix of contract end date and abolishment coinciding</a><br>
-      <span style="color:rgba(255,255,255,0.6);">2. </span><a href="https://unicef.sharepoint.com/teams/GSSC-Payroll/Offboarding%20Working%20Confidential/Forms/AllItems.aspx?id=%2Fteams%2FGSSC%2DPayroll%2FOffboarding%20Working%20Confidential%2FOFFB%20Management%2FProjects%202025%2FAbolishment%20project%2FApr%202025%20B%26E%20Matrix%20Contract%20beyond%20abolishment%20date%2Epdf&parent=%2Fteams%2FGSSC%2DPayroll%2FOffboarding%20Working%20Confidential%2FOFFB%20Management%2FProjects%202025%2FAbolishment%20project&p=true&ga=1" target="_blank" style="color:rgba(255,255,255,0.85);text-decoration:underline;">Benefits &amp; Entitlements Matrix of contract end date beyond abolishment date</a>
+    <div class="header-sub" style="margin-top:12px;line-height:1.9;">
+      <span style="color:rgba(255,255,255,0.8);font-size:10px;font-style:italic;">This tool is aligned with GSSC Offboarding Resources and reflects the following reference matrices:</span><br>
+      <span style="color:rgba(255,255,255,0.6);font-size:10px;font-style:italic;">1. </span><a href="https://unicef.sharepoint.com/teams/GSSC-Payroll/Offboarding%20Working%20Confidential/Forms/AllItems.aspx?id=%2Fteams%2FGSSC%2DPayroll%2FOffboarding%20Working%20Confidential%2FOFFB%20Management%2FProjects%202025%2FAbolishment%20project%2FApr%202025%20B%26E%20Matrix%20Contract%20end%20date%20and%20abolishment%20coinciding%2Epdf&parent=%2Fteams%2FGSSC%2DPayroll%2FOffboarding%20Working%20Confidential%2FOFFB%20Management%2FProjects%202025%2FAbolishment%20project&p=true&ga=1" target="_blank" style="color:rgba(255,255,255,0.9);text-decoration:underline;font-size:10px;font-style:italic;">Benefits &amp; Entitlements Matrix for cases where the contract end date coincides with the abolishment date</a><br>
+      <span style="color:rgba(255,255,255,0.6);font-size:10px;font-style:italic;">2. </span><a href="https://unicef.sharepoint.com/teams/GSSC-Payroll/Offboarding%20Working%20Confidential/Forms/AllItems.aspx?id=%2Fteams%2FGSSC%2DPayroll%2FOffboarding%20Working%20Confidential%2FOFFB%20Management%2FProjects%202025%2FAbolishment%20project%2FApr%202025%20B%26E%20Matrix%20Contract%20beyond%20abolishment%20date%2Epdf&parent=%2Fteams%2FGSSC%2DPayroll%2FOffboarding%20Working%20Confidential%2FOFFB%20Management%2FProjects%202025%2FAbolishment%20project&p=true&ga=1" target="_blank" style="color:rgba(255,255,255,0.9);text-decoration:underline;font-size:10px;font-style:italic;">Benefits &amp; Entitlements Matrix for cases where the contract end date extends beyond the abolishment date</a>
     </div>
   </div>
   <div class="header-bar"></div>
@@ -243,7 +250,7 @@
   <!-- Policy notice -->
   <div class="policy-notice">
     <div class="notice-icon">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#003F7D" stroke-width="1.2"/><path d="M8 7v4M8 5v.5" stroke="#003F7D" stroke-width="1.3" stroke-linecap="round"/></svg>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#C68B00" stroke-width="1.4"/><path d="M8 7v4M8 5v.5" stroke="#003F7D" stroke-width="1.3" stroke-linecap="round"/></svg>
     </div>
     <div>This tool covers <strong>two post-abolishment scenarios</strong>: (1) when your contract end date coincides with the abolishment notification, and (2) when your contract extends beyond the notification date. These apply to notifications issued from 1 April 2025 onwards.<br><br>You can download a PDF summary of your separation benefits and entitlements, and refer to the FAQ (grouped by topic) for further guidance.
     </div>
@@ -253,13 +260,13 @@
   <div style="margin-bottom:28px;box-shadow:0 1px 4px rgba(0,63,125,0.06);border-radius:var(--radius);">
   <!-- NAVIGATOR -->
   <div class="navigator">
-    <div class="nav-header" style="display:flex;align-items:center;gap:14px;">
-      <div style="width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
-      </div>
-      <div>
+    <div class="nav-header" style="display:flex;align-items:center;">
+      <div style="position:relative;z-index:1;">
         <div class="nav-header-title">Find your separation benefits &amp; entitlements</div>
         <div class="nav-header-sub">Answer three questions to see only what applies to you</div>
+      </div>
+      <div style="position:absolute;right:-18px;top:50%;transform:translateY(-50%);width:80px;height:80px;opacity:1;pointer-events:none;">
+        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
       </div>
     </div>
 
@@ -369,13 +376,15 @@
   <!-- FAQ SECTION -->
   <div class="faq-card">
     <div class="faq-card-header">
-      <div style="width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-      </div>
-      <div>
-        <div class="faq-card-title">Frequently Asked Questions</div>
-        <div class="faq-card-sub">*As reflected in <a href="https://unicef.sharepoint.com/sites/GSSC/SitePages/Page-3.aspx?CT=1749461474612&OR=OWA-NT-Mail&CID=dba0a7cd-8905-1d10-fab0-328037676e6d&e=4%3aca5903816e06414f846c9da64d2d977e&web=1&sharingv2=true&fromShare=true&at=9" target="_blank" style="color:rgba(255,255,255,0.85);text-decoration:underline;">GSSC Offboarding Useful Resources</a></div>
+      <div style="position:relative;z-index:1;">
+        <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;">
+          <div class="faq-card-title">Frequently Asked Questions</div>
+          <div class="faq-card-sub">*As reflected in <a href="https://unicef.sharepoint.com/sites/GSSC/SitePages/Page-3.aspx?CT=1749461474612&OR=OWA-NT-Mail&CID=dba0a7cd-8905-1d10-fab0-328037676e6d&e=4%3aca5903816e06414f846c9da64d2d977e&web=1&sharingv2=true&fromShare=true&at=9" target="_blank" style="color:rgba(255,255,255,0.85);text-decoration:underline;">GSSC Offboarding Useful Resources</a></div>
+        </div>
         <div class="faq-card-sub" style="margin-top:2px;">Search or browse by topic to find answers</div>
+      </div>
+      <div style="position:absolute;right:-18px;top:50%;transform:translateY(-50%);width:80px;height:80px;pointer-events:none;">
+        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
       </div>
     </div>
 
@@ -402,90 +411,99 @@
 
     <!-- Topic tiles -->
     <div class="faq-tiles-area">
-      <div class="faq-tiles-label">Browse by topic</div>
-      <div class="faq-tile-grid">
+
+        <div class="faq-tiles-label">Browse by topic</div>
+        <div class="faq-tile-grid">
 
         <div class="faq-tile" id="tile-leave" onclick="faqSetTag('leave',null,true)">
-          <div class="faq-tile-icon" style="background:#E8F5FB;">
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#0C447C" stroke-width="1.3" stroke-linecap="round"><rect x="2" y="3" width="12" height="10" rx="2"/><line x1="5" y1="7" x2="11" y2="7"/><line x1="5" y1="10" x2="9" y2="10"/></svg>
+          <div class="faq-tile-icon" style="background:#D6EEF9;"><svg width="21" height="21" viewBox="0 0 16 16" fill="none" stroke-width="1.3" stroke-linecap="round"><rect x="2" y="3" width="12" height="10" rx="2" stroke="#C68B00"/><line x1="5" y1="7" x2="11" y2="7" stroke="#003F7D"/><line x1="5" y1="10" x2="9" y2="10" stroke="#003F7D"/></svg></div>
+          <div class="faq-tile-body">
+            <div class="faq-tile-name">General Separation Entitlements</div>
+            <div class="faq-tile-sub">Unused annual leave balance | CTO payment | In lieu of notice payment</div>
+            <div class="faq-tile-count" id="tc-leave">18 questions</div>
           </div>
-          <div class="faq-tile-name">General separation entitlements</div>
-          <div class="faq-tile-count" id="tc-leave">18 questions</div>
         </div>
 
         <div class="faq-tile" id="tile-travel" onclick="faqSetTag('travel',null,true)">
-          <div class="faq-tile-icon" style="background:#EAF3DE;">
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#27500A" stroke-width="1.3" stroke-linecap="round"><path d="M2 13l3-5 2 2 3-4 4 7"/><circle cx="12" cy="4" r="1.5"/></svg>
+          <div class="faq-tile-icon" style="background:#D6EEF9;"><svg width="21" height="21" viewBox="0 0 16 16" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="5" stroke="#C68B00"/><line x1="2" y1="7" x2="12" y2="7" stroke="#003F7D"/><path d="M4.5 4.5C5.5 6 6.5 8 7 12" stroke="#003F7D"/><path d="M9.5 4.5C8.5 6 7.5 8 7 12" stroke="#003F7D"/><path d="M11 10l2 2m0 0l-1.5 1.5M13 12l-1.5-1.5" stroke="#C68B00" stroke-width="1.4"/></svg></div>
+          <div class="faq-tile-body">
+            <div class="faq-tile-name">IP Separation Entitlements</div>
+            <div class="faq-tile-sub">Repatriation travel and shipment | Repatriation grant</div>
+            <div class="faq-tile-count" id="tc-travel">12 questions</div>
           </div>
-          <div class="faq-tile-name">IP separation entitlements</div>
-          <div class="faq-tile-count" id="tc-travel">12 questions</div>
-        </div>
-
-        <div class="faq-tile" id="tile-indemnity" onclick="faqSetTag('indemnity',null,true)">
-          <div class="faq-tile-icon" style="background:#FAEEDA;">
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#633806" stroke-width="1.3" stroke-linecap="round"><rect x="3" y="2" width="10" height="12" rx="2"/><line x1="5.5" y1="6" x2="10.5" y2="6"/><line x1="5.5" y1="9" x2="10.5" y2="9"/><line x1="5.5" y1="12" x2="8" y2="12"/></svg>
-          </div>
-          <div class="faq-tile-name">Frequently Asked Questions — Termination indemnity &amp; separation payment</div>
-          <div class="faq-tile-count" id="tc-indemnity">14 questions</div>
         </div>
 
         <div class="faq-tile" id="tile-pension" onclick="faqSetTag('pension',null,true)">
-          <div class="faq-tile-icon" style="background:#EEEDFE;">
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#3C3489" stroke-width="1.3" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>
+          <div class="faq-tile-icon" style="background:#D6EEF9;"><svg width="21" height="21" viewBox="0 0 16 16" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2L3 4.5v4C3 11.5 5.2 13.8 8 14.5c2.8-.7 5-3 5-6v-4L8 2z" stroke="#C68B00"/><path d="M5.5 8l1.8 1.8 3.2-3.6" stroke="#003F7D"/></svg></div>
+          <div class="faq-tile-body">
+            <div class="faq-tile-name">Pension</div>
+            <div class="faq-tile-sub">Retirement | Pension benefits</div>
+            <div class="faq-tile-count" id="tc-pension">12 questions</div>
           </div>
-          <div class="faq-tile-name">Pension</div>
-          <div class="faq-tile-count" id="tc-pension">12 questions</div>
         </div>
 
         <div class="faq-tile" id="tile-ashi" onclick="faqSetTag('ashi',null,true)">
-          <div class="faq-tile-icon" style="background:#FBEAF0;">
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#72243E" stroke-width="1.3" stroke-linecap="round"><path d="M8 13s-5-3.5-5-7a3 3 0 016 0 3 3 0 016 0c0 3.5-5 7-5 7"/></svg>
+          <div class="faq-tile-icon" style="background:#D6EEF9;"><svg width="21" height="21" viewBox="0 0 16 16" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13s-5-3.5-5-7a3 3 0 016 0 3 3 0 016 0c0 3.5-5 7-5 7" stroke="#C68B00"/><polyline points="3,8 5,6 6.5,9 8,5.5 9.5,9 11,7 13,8" stroke="#003F7D" stroke-width="1.1" fill="none"/></svg></div>
+          <div class="faq-tile-body">
+            <div class="faq-tile-name">ASHI &amp; ASLI</div>
+            <div class="faq-tile-sub">ASHI – After-Service Health Insurance | ASLI – After-Service Life Insurance</div>
+            <div class="faq-tile-count" id="tc-ashi">12 questions</div>
           </div>
-          <div class="faq-tile-name">Frequently Asked Questions — ASHI &amp; ASLI</div>
-          <div class="faq-tile-count" id="tc-ashi">12 questions</div>
         </div>
 
-        <div class="faq-tile" id="tile-early" onclick="faqSetTag('early',null,true)">
-          <div class="faq-tile-icon" style="background:#FAECE7;">
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#712B13" stroke-width="1.3" stroke-linecap="round"><path d="M10 8H3m0 0l2.5-2.5M3 8l2.5 2.5"/><line x1="13" y1="3" x2="13" y2="13"/></svg>
+        <div class="faq-tile" id="tile-indemnity" onclick="faqSetTag('indemnity',null,true)">
+          <div class="faq-tile-icon" style="background:#D6EEF9;"><svg width="21" height="21" viewBox="0 0 16 16" fill="none" stroke-width="1.3" stroke-linecap="round"><rect x="1" y="4" width="14" height="8" rx="1.5" stroke="#C68B00"/><circle cx="8" cy="8" r="2" stroke="#003F7D"/><line x1="1" y1="6.5" x2="4" y2="6.5" stroke="#003F7D"/><line x1="12" y1="9.5" x2="15" y2="9.5" stroke="#003F7D"/></svg></div>
+          <div class="faq-tile-body">
+            <div class="faq-tile-name">Termination Indemnity &amp; Separation Payment</div>
+            <div class="faq-tile-count" id="tc-indemnity">14 questions</div>
           </div>
-          <div class="faq-tile-name">Early separation (separation before the post abolishment date)</div>
-          <div class="faq-tile-count" id="tc-early">5 questions</div>
-        </div>
-
-        <div class="faq-tile" id="tile-slwop" onclick="faqSetTag('slwop',null,true)">
-          <div class="faq-tile-icon" style="background:#E1F5EE;">
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#085041" stroke-width="1.3" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>
-          </div>
-          <div class="faq-tile-name">SLWOP and temporary assignment</div>
-          <div class="faq-tile-count" id="tc-slwop">25 questions</div>
         </div>
 
         <div class="faq-tile" id="tile-retirement" onclick="faqSetTag('retirement',null,true)">
-          <div class="faq-tile-icon" style="background:#F1EFE8;">
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#444441" stroke-width="1.3" stroke-linecap="round"><circle cx="8" cy="6" r="3"/><path d="M3 14c0-2.76 2.24-5 5-5s5 2.24 5 5"/></svg>
+          <div class="faq-tile-icon" style="background:#D6EEF9;"><svg width="21" height="21" viewBox="0 0 16 16" fill="none" stroke-width="1.3" stroke-linecap="round"><circle cx="8" cy="6" r="3" stroke="#C68B00"/><path d="M3 14c0-2.76 2.24-5 5-5s5 2.24 5 5" stroke="#003F7D"/></svg></div>
+          <div class="faq-tile-body">
+            <div class="faq-tile-name">Abolishment Close to Retirement</div>
+            <div class="faq-tile-count" id="tc-retirement">12 questions</div>
           </div>
-          <div class="faq-tile-name">Abolishment close to retirement</div>
-          <div class="faq-tile-count" id="tc-retirement">14 questions</div>
+        </div>
+
+        <div class="faq-tile" id="tile-slwop" onclick="faqSetTag('slwop',null,true)">
+          <div class="faq-tile-icon" style="background:#D6EEF9;"><svg width="21" height="21" viewBox="0 0 16 16" fill="none" stroke-width="1.3" stroke-linecap="round"><circle cx="8" cy="8" r="6" stroke="#C68B00"/><path d="M8 5v3l2 2" stroke="#003F7D"/></svg></div>
+          <div class="faq-tile-body">
+            <div class="faq-tile-name">SLWOP and Temporary Assignment</div>
+            <div class="faq-tile-count" id="tc-slwop">25 questions</div>
+          </div>
+        </div>
+
+        <div class="faq-tile" id="tile-early" onclick="faqSetTag('early',null,true)">
+          <div class="faq-tile-icon" style="background:#D6EEF9;"><svg width="21" height="21" viewBox="0 0 16 16" fill="none" stroke-width="1.3" stroke-linecap="round"><path d="M10 8H3m0 0l2.5-2.5M3 8l2.5 2.5" stroke="#003F7D"/><line x1="13" y1="3" x2="13" y2="13" stroke="#C68B00"/></svg></div>
+          <div class="faq-tile-body">
+            <div class="faq-tile-name">Early Separation</div>
+            <div class="faq-tile-sub">Before the Post Abolishment Date</div>
+            <div class="faq-tile-count" id="tc-early">5 questions</div>
+          </div>
         </div>
 
         <div class="faq-tile" id="tile-reappointment" onclick="faqSetTag('reappointment',null,true)">
-          <div class="faq-tile-icon" style="background:#E6F1FB;">
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#185FA5" stroke-width="1.3" stroke-linecap="round"><path d="M14 8A6 6 0 002 8"/><path d="M2 8l2-2M2 8l2 2"/><path d="M2 14v-2h2"/></svg>
+          <div class="faq-tile-icon" style="background:#D6EEF9;"><svg width="21" height="21" viewBox="0 0 16 16" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h6a1 1 0 011 1v10a1 1 0 01-1 1H6" stroke="#C68B00"/><path d="M9 8H2m0 0l2-2M2 8l2 2" stroke="#003F7D"/></svg></div>
+          <div class="faq-tile-body">
+            <div class="faq-tile-name">Reappointment After Separation Following Post Abolishment</div>
+            <div class="faq-tile-count" id="tc-reappointment">2 questions</div>
           </div>
-          <div class="faq-tile-name">Reappointment after separation on post abolishment</div>
-          <div class="faq-tile-count" id="tc-reappointment">2 questions</div>
         </div>
 
-      </div>
+        </div>
       <div class="faq-result-banner" id="faq-result-banner"></div>
     </div>
 
     <!-- No results message -->
     <div id="faq-no-results" style="display:none;padding:20px;text-align:center;font-size:13px;color:var(--muted);">No questions match your search. Try different keywords or clear the filter.</div>
 
+    <!-- FAQ accordion items wrapper -->
+    <div id="faq-accordion" style="background:var(--card);border-radius:0 0 var(--radius) var(--radius);overflow:hidden;">
+
     <!-- Select topic prompt — shown by default, hidden once a topic is selected -->
-    <div id="faq-prompt" style="padding:18px 20px;text-align:center;border-top:0.5px solid var(--border);">
+    <div id="faq-prompt" style="padding:18px 20px;text-align:center;">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="display:block;margin:0 auto 8px;"><circle cx="10" cy="10" r="9" stroke="#1CABE2" stroke-width="1.3"/><path d="M10 6v4M10 13v.5" stroke="#1CABE2" stroke-width="1.5" stroke-linecap="round"/></svg>
       <div style="font-size:13px;font-weight:500;color:var(--ud);margin-bottom:4px;">Select a topic above to view questions</div>
       <div style="font-size:11px;color:var(--muted);">Click any topic tile or use the tag buttons — or type in the search bar to find a specific question</div>
@@ -496,12 +514,12 @@
 
     <div class="faq-item" data-topics="leave">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-leave">Leave</span><span class="faq-q-text">Will I receive compensation for all the annual leave days I did not use?</span></div><span class="faq-chevron">▾</span></div>
-      <div class="faq-a"><p>Upon separation staff will receive compensation of their unused annual leave days. The maximum annual leave compensation will depend on your contract type. If you were already separated, the annual leave days paid out may be considered:</p><p><strong>Fixed-term contract (FT) — with previous FT/Cont/Perm contract with break of max. 12 months*:</strong> Previous payment + current payment = max. 60 days. Without previous: max. 60 days.<br><strong>Continuing/Permanent (CONT/PERM) — with previous FT/Cont/Perm with break of max. 12 months*:</strong> Previous payment + current payment = max. 60 days. Without previous: max. 60 days.<br><strong>Temporary Appointment:</strong> 18 days (N/A for previous contract consideration).</p><p>*You separated and within 12 months were reappointed. E.g. separated from a fixed-term contract on 31 January 2012 and reappointed on 01 April 2012: annual leave balance paid out across both separations cannot exceed 60 days.</p></div>
+      <div class="faq-a"><p>Upon separation staff will receive compensation of their unused annual leave days. The maximum will depend on your contract type:</p><ul><li><strong>Fixed-term (FT):</strong> Max. 60 days. If you had a previous FT/Continuing/Permanent contract with a break of max. 12 months, the previous payout and current payout combined cannot exceed 60 days.</li><li><strong>Continuing/Permanent (CONT/PERM):</strong> Max. 60 days. Same cumulative rule applies if a previous FT/Cont/Perm contract existed within a 12-month break.</li><li><strong>Temporary Appointment:</strong> Max. 18 days. Previous payouts under other contract types are not counted.</li></ul><p><em>*Previous separation applies when you separated and were reappointed within 12 months. For example: separated from a fixed-term contract on 31 January 2012 and reappointed on 01 April 2012 — annual leave balance paid out across both separations cannot exceed 60 days.</em></p></div>
     </div>
 
     <div class="faq-item" data-topics="leave">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-leave">Leave</span><span class="faq-q-text">How can I check if I had annual leave payout before?</span></div><span class="faq-chevron">▾</span></div>
-      <div class="faq-a"><p>You may download your last payslip of your previous contract — it will contain the breakdown of the payments. If you were previously separated from UNICEF, you may ask for this breakdown during your current separation process. If you were previously separated from another UN agency, you may contact the HR colleagues from that agency.</p></div>
+      <div class="faq-a"><p>You may download your last payslip of your previous contract — it will contain the breakdown of the payments.</p><ul><li>If you were previously separated from UNICEF, you may ask for this breakdown during your current separation process.</li><li>If you were previously separated from another UN agency, you may contact the HR colleagues from that agency.</li></ul></div>
     </div>
 
     <div class="faq-item" data-topics="leave">
@@ -566,7 +584,7 @@
 
     <div class="faq-item" data-topics="leave">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-leave">Notice</span><span class="faq-q-text">What is the in lieu of notice payment?</span></div><span class="faq-chevron">▾</span></div>
-      <div class="faq-a"><p>If you hold a fixed-term, permanent and continuing appointment and your post is abolished, you will receive a written notification on the abolishment 6 months prior to the effective date of abolishment. If this is not possible, compensation equivalent to salary, post adjustment and allowances corresponding to the relevant notice period will be paid to you — this is called in lieu of notice compensation. E.g. if only 4 months of notice is given before the abolishment, you will receive 2 months of in lieu of notice compensation.</p></div>
+      <div class="faq-a"><ul><li><strong>Fixed-term, Permanent or Continuing appointment:</strong> You will receive a written notification 6 months prior to the effective date of abolishment. If this is not possible, compensation equivalent to salary, post adjustment and allowances for the remaining notice period will be paid to you — this is called in lieu of notice compensation. <em>Example: if only 4 months of notice is given, you will receive 2 months of in lieu of notice compensation.</em></li><li><strong>Temporary Appointment:</strong> You will receive a written notification 15 days prior to the effective date of abolishment. If this is not possible, compensation equivalent to salary, post adjustment and allowances will be paid. <em>Example: if only 10 days of notice is given, you will receive 5 days of in lieu of notice compensation.</em></li></ul></div>
     </div>
 
     <div class="faq-item" data-topics="leave">
@@ -594,12 +612,12 @@
 
     <div class="faq-item" data-topics="travel">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-travel">Travel</span><span class="faq-q-text">Can I travel to any destination?</span></div><span class="faq-chevron">▾</span></div>
-      <div class="faq-a"><p>If you are separating from a Temporary Appointment: liability is from your duty station to your place of recruitment. You may travel to an alternative destination up to cost of travel liability. If you are separating from a Fixed-term, Continuing or Permanent contract: liability is from your duty station to your place of recruitment/place of home leave. You may travel to an alternative destination up to cost of travel liability.</p></div>
+      <div class="faq-a"><ul><li><strong>Temporary Appointment:</strong> Liability is from your duty station to your place of recruitment. You may travel to an alternative destination up to the cost of the travel liability.</li><li><strong>Fixed-term, Continuing or Permanent contract:</strong> Liability is from your duty station to your place of recruitment or place of home leave. You may travel to an alternative destination up to the cost of the travel liability.</li></ul></div>
     </div>
 
     <div class="faq-item" data-topics="travel">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-travel">Travel</span><span class="faq-q-text">How will my repatriation travel be arranged?</span></div><span class="faq-chevron">▾</span></div>
-      <div class="faq-a"><p>If you are entitled to repatriation travel, you will have 2 options: <strong>Option 1:</strong> travel arranged by UNICEF, with 25 kg excess baggage per person — your office will arrange your tickets through the most direct and economic route. <strong>Option 2:</strong> travel lump sum (based on 75% of the lowest unrestrictive airfare according to UNICEF liability). If you wish to exercise the lump sum option, you must request it before your travel takes place.</p></div>
+      <div class="faq-a"><p>If you are entitled to repatriation travel, you will have 2 options:</p><ul><li><strong>Option 1 — Travel arranged by UNICEF:</strong> Your office will arrange tickets through the most direct and economic route, with 25 kg excess baggage per person.</li><li><strong>Option 2 — Travel lump sum:</strong> 75% of the lowest unrestrictive airfare according to UNICEF liability. You must request this option before your travel takes place.</li></ul></div>
     </div>
 
     <div class="faq-item" data-topics="travel">
@@ -614,7 +632,7 @@
 
     <div class="faq-item" data-topics="travel">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-travel">Travel</span><span class="faq-q-text">What is my shipment entitlement?</span></div><span class="faq-chevron">▾</span></div>
-      <div class="faq-a"><p><strong>Temporary Appointment:</strong> Option 1 — Unaccompanied shipment: 100 kg by air + shipment insurance USD 1,600. Option 2 — Relocation Grant in lieu: USD 1,500.<br><br><strong>Fixed-term (except JPO), Continuing or Permanent:</strong> Option 1 — Unaccompanied shipment/Removal of household goods: standard 20-foot container (33.2 cubic metres) without spouse/dependent child; standard 40-foot container (67.7 cubic metres) with spouse/dependent child at duty station. Shipment insurance: USD 16,000 (staff member), USD 8,000 (first eligible family member), USD 4,800 (every other eligible family member). Option 2 — Relocation Grant in lieu: USD 13,000 (travelling alone), USD 18,000 (travelling with eligible family members).<br><br><strong>Junior Professional Officer (JPO):</strong> Option 1 — Unaccompanied shipment: 600 kg (staff member), 250 kg (first eligible family member), 150 kg (every other eligible family member). Shipment insurance: USD 9,600 (staff member), USD 4,000 (first eligible family member), USD 2,400 (every other eligible family member). Option 2 — Relocation Grant in lieu: USD 9,000 (travelling alone), USD 12,000 (travelling with eligible family members).</p></div>
+      <div class="faq-a"><p><strong>Temporary Appointment:</strong></p><ul><li><strong>Option 1 — Unaccompanied shipment:</strong> 100 kg by air + shipment insurance USD 1,600.</li><li><strong>Option 2 — Relocation Grant in lieu:</strong> USD 1,500.</li></ul><p><strong>Fixed-term (except JPO), Continuing or Permanent:</strong></p><ul><li><strong>Option 1 — Unaccompanied shipment / Removal of household goods:</strong><ul><li>Without spouse/dependent child: standard 20-foot container (33.2 cubic metres) + shipment insurance USD 16,000.</li><li>With spouse/dependent child at duty station: standard 40-foot container (67.7 cubic metres) + shipment insurance USD 16,000.</li></ul></li><li><strong>Option 2 — Relocation Grant in lieu:</strong> USD 13,000 (travelling alone); USD 18,000 (travelling with eligible family members).</li></ul><p><strong>Junior Professional Officer (JPO):</strong></p><ul><li><strong>Option 1 — Unaccompanied shipment:</strong><ul><li>Staff member: 600 kg</li><li>First eligible family member: 250 kg</li><li>Every other eligible family member: 150 kg</li><li>Shipment insurance: USD 16,000</li></ul></li><li><strong>Option 2 — Relocation Grant in lieu:</strong> USD 9,000 (travelling alone); USD 12,000 (travelling with eligible family members).</li></ul></div>
     </div>
 
     <div class="faq-item" data-topics="travel">
@@ -624,7 +642,7 @@
 
     <div class="faq-item" data-topics="travel">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-travel">Grant</span><span class="faq-q-text">Who is entitled to a repatriation grant?</span></div><span class="faq-chevron">▾</span></div>
-      <div class="faq-a"><p>The repatriation grant is payable to International Professional staff members who leave the country of the last duty station when separating. You are entitled if: you have completed at least five years of qualifying service (cumulative service since your most recent appointment or reappointment served outside your country of nationality, home leave and permanent residence)*; at the time of separation, you are residing outside your country of nationality, country of home leave or country of permanent residence; and you relocate away from the country of your last duty station.<br>*Note: the following are not qualifying service: (a) special leave without pay longer than 31 days, and (b) periods served in the home country, country of nationality or country of permanent residence.</p></div>
+      <div class="faq-a"><p>The repatriation grant is payable to International Professional staff members who leave the country of the last duty station when separating. You are entitled if all of the following conditions are met:</p><ul><li>You have completed at least five years of qualifying service (cumulative service since your most recent appointment or reappointment, served outside your country of nationality, home leave and permanent residence).*</li><li>At the time of separation, you are residing outside your country of nationality, country of home leave or country of permanent residence.</li><li>You relocate away from the country of your last duty station.</li></ul><p><em>*The following do not count as qualifying service: (a) special leave without pay longer than 31 days, and (b) periods served in the home country, country of nationality or country of permanent residence.</em></p></div>
     </div>
 
     <div class="faq-item" data-topics="travel">
@@ -644,7 +662,7 @@
 
     <div class="faq-item" data-topics="travel">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-travel">Grant</span><span class="faq-q-text">My spouse is also a UN staff member. Does it have an impact on my repatriation grant entitlement?</span></div><span class="faq-chevron">▾</span></div>
-      <div class="faq-a"><p>If your spouse is not entitled to receive repatriation grant upon separation, this does not have an impact on your repatriation grant entitlement. If your spouse is also entitled to repatriation grant upon separation, the first parent to separate may claim at the rate applicable to a staff member with a spouse or dependent child. The second parent, if also eligible, may claim either: at the rate applicable for a staff member with neither a spouse nor dependent child for the period of service subsequent to the separation of the spouse; or at the rate applicable for a staff member with a spouse or dependent child for the whole period of qualifying service, less the amount paid to the first parent. See paragraphs 95 and 96 in DHR PROCEDURE 2022/002 v. 24 July 2023.</p></div>
+      <div class="faq-a"><ul><li><strong>If your spouse is not entitled to repatriation grant:</strong> This does not have an impact on your repatriation grant entitlement.</li><li><strong>If your spouse is also entitled to repatriation grant:</strong> The first parent to separate may claim at the rate applicable to a staff member with a spouse or dependent child. The second parent, if also eligible, may claim either:<ul><li>At the rate applicable for a staff member with neither a spouse nor dependent child — for the period of service subsequent to the separation of the spouse; or</li><li>At the rate applicable for a staff member with a spouse or dependent child — for the whole period of qualifying service, less the amount paid to the first parent.</li></ul></li></ul><p>See paragraphs 95 and 96 in DHR PROCEDURE 2022/002 v. 24 July 2023.</p></div>
     </div>
 
     <!-- SECTION: Termination indemnity -->
@@ -657,7 +675,7 @@
 
     <div class="faq-item" data-topics="indemnity">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-indemnity">Indemnity</span><span class="faq-q-text">How is the termination indemnity calculated?</span></div><span class="faq-chevron">▾</span></div>
-      <div class="faq-a"><p><strong>If you have more than 6 years of continuous service since your most recent appointment or reappointment:</strong> your termination indemnity will be calculated based on the length of your service as follows (service period / FT contract / continuing contract): 6 completed years = 3 months / 6 months; 7 completed years = 5 months / 7 months; 8 completed years = 7 months / 8 months; 9 completed years = 9 months / 9 months; 10 completed years = 9.5 months / 9.5 months; 11 completed years = 10 months / 10 months; 12 completed years = 10.5 months / 10.5 months; 13 completed years = 11 months / 11 months; 14 completed years = 11.5 months / 11.5 months; 15 or more = 12 months / 12 months.<br><br><strong>If you have less than 5 years of service:</strong> 1-6 months uncompleted service = 6 weeks; 7-12 months = 1 week for each uncompleted month; 13 months or more = 3 months.<br><br>*Service period: the continuous service since your latest appointment or reappointment, excluding special leave without pay periods longer than 31 days.</p></div>
+      <div class="faq-a"><p><strong>If you have less than 6 years of continuous service:</strong></p><ul><li>1–6 months of uncompleted service: 6 weeks</li><li>7–12 months of uncompleted service: 1 week for each uncompleted month</li><li>13 months or more of uncompleted service: 3 months</li></ul><p><strong>If you have 6 or more years of continuous service</strong> (as per Annex 1):</p><ul><li>6 completed years: 3 months (FT) / 6 months (Continuing)</li><li>7 completed years: 5 months / 7 months</li><li>8 completed years: 7 months / 8 months</li><li>9 completed years: 9 months / 9 months</li><li>10 completed years: 9.5 months / 9.5 months</li><li>11 completed years: 10 months / 10 months</li><li>12 completed years: 10.5 months / 10.5 months</li><li>13 completed years: 11 months / 11 months</li><li>14 completed years: 11.5 months / 11.5 months</li><li>15 or more completed years: 12 months / 12 months</li></ul><p><em>*Service period = continuous service since your latest appointment or reappointment, excluding special leave without pay periods longer than 31 days.</em></p></div>
     </div>
 
     <div class="faq-item" data-topics="indemnity">
@@ -667,7 +685,7 @@
 
     <div class="faq-item" data-topics="indemnity">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-indemnity">Indemnity</span><span class="faq-q-text">Can I have the 50% additional termination indemnity?</span></div><span class="faq-chevron">▾</span></div>
-      <div class="faq-a"><p>If you received your abolishment notification prior to 01 April 2025 and are entitled to receive termination indemnity, you may also receive an additional 50% termination indemnity by signing the <a href="https://unicef.sharepoint.com/sites/portals/RF/Regulatory%20Framework%20Library/UNICEF%20Guidance%20on%20Notice%20for%20Staff%20on%20Abolished%20Post.pdf" target="_blank">No Contest Agreement</a>. Signing is optional and means that you withdraw pending claims and appeals against UNICEF and will not file new ones. If you do not sign, you will receive the regular termination indemnity (without the additional 50%). If you want to take SLWOP starting from the effective date of the post abolishment or termination, you will not be entitled to the additional 50% termination indemnity. If you received your abolishment notification on 01 April 2025 or later, you are not eligible to receive the additional 50% termination indemnity.</p></div>
+      <div class="faq-a"><ul><li><strong>Notification received before 01 April 2025:</strong> You may receive an additional 50% termination indemnity by signing the <a href="https://unicef.sharepoint.com/sites/portals/RF/Regulatory%20Framework%20Library/UNICEF%20Guidance%20on%20Notice%20for%20Staff%20on%20Abolished%20Post.pdf" target="_blank">No Contest Agreement</a>. Signing is optional and means you withdraw pending claims and appeals against UNICEF and will not file new ones.</li><li><strong>If you do not sign the No Contest Agreement:</strong> You will receive the regular termination indemnity (without the additional 50%).</li><li><strong>If you opt for SLWOP</strong> starting from the effective date of the post abolishment or termination: You will not be entitled to the additional 50% termination indemnity.</li><li><strong>Notification received on or after 01 April 2025:</strong> You are not eligible to receive the additional 50% termination indemnity.</li></ul></div>
     </div>
 
     <div class="faq-item" data-topics="indemnity">
@@ -697,7 +715,7 @@
 
     <div class="faq-item" data-topics="indemnity">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-indemnity">Indemnity</span><span class="faq-q-text">I am confused, does one need 5 or 6 continuous years of service for separation payment?</span></div><span class="faq-chevron">▾</span></div>
-      <div class="faq-a"><p>5 years of continuous service is a milestone staff members need to reach in case their contract is abolished on the contract end date, and they sign the No Contest Agreement for separation payment. When the contract is valid beyond the abolishment date, termination indemnity is payable in all cases. The termination indemnity calculation method is different for staff members who have less than 6 years of continuous service: each month of uncompleted service becomes one week of termination indemnity. The minimum payable is 6 weeks, the maximum is 3 months. When the service is at least 6 years long, the termination indemnity is calculated based on the table in Annex 1 from the Separation policy: minimum payable is 3 months, maximum payable is 12 months.</p></div>
+      <div class="faq-a"><ul><li><strong>5 years of continuous service</strong> is the threshold required when your contract is abolished on the contract end date (SAME scenario). You must also sign the No Contest Agreement to receive the separation payment.</li><li><strong>When your contract is valid beyond the abolishment date (BEYOND scenario):</strong> Termination indemnity is payable in all cases, regardless of length of service.</li><li><strong>Less than 6 years of service:</strong> Each month of uncompleted service = 1 week of termination indemnity. Minimum payable: 6 weeks. Maximum payable: 3 months.</li><li><strong>6 or more years of service:</strong> Termination indemnity is calculated based on Annex 1 of the Separation Policy. Minimum payable: 3 months. Maximum payable: 12 months.</li></ul></div>
     </div>
 
     <div class="faq-item" data-topics="indemnity">
@@ -725,7 +743,7 @@
 
     <div class="faq-item" data-topics="pension">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-pension">Pension</span><span class="faq-q-text">When may I retire?</span></div><span class="faq-chevron">▾</span></div>
-      <div class="faq-a"><p><strong>Normal retirement:</strong> You may retire if you are at least at your normal retirement age and have at least 5 years of pension contributions. Normal retirement age is: 60 years — if you started pension contributions before 01 January 1990; 62 years — if you started between 01 January 1990 and 31 December 2013; 65 years — if you started on/after 01 January 2014.<br><strong>Early retirement:</strong> You may take early retirement any time between your early and normal retirement age, if you have at least 5 years of contributions. Early retirement age is: 55 — if contributions started before 01 January 2014; 58 — if contributions started on/after 01 January 2014.</p></div>
+      <div class="faq-a"><p><strong>Normal retirement</strong> — requires at least 5 years of pension contributions and reaching normal retirement age:</p><ul><li>Age 60 — if you started pension contributions before 01 January 1990</li><li>Age 62 — if you started between 01 January 1990 and 31 December 2013</li><li>Age 65 — if you started on or after 01 January 2014</li></ul><p><strong>Early retirement</strong> — you may retire any time between your early and normal retirement age, with at least 5 years of contributions. Early retirement age is:</p><ul><li>Age 55 — if contributions started before 01 January 2014</li><li>Age 58 — if contributions started on or after 01 January 2014</li></ul></div>
     </div>
 
     <div class="faq-item" data-topics="pension">
@@ -740,7 +758,7 @@
 
     <div class="faq-item" data-topics="pension">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-pension">Pension</span><span class="faq-q-text">I have a contract until I turn 65 years old. May I retire earlier?</span></div><span class="faq-chevron">▾</span></div>
-      <div class="faq-a"><p>If your normal retirement age is 60 and you have at least 5 years of contributions, you may retire any time between the age of 60 and 65. If your normal retirement age is 62 and you have at least 5 years of contributions, you may retire any time between the age of 62 and 65. To initiate your retirement, please submit a "notice to retire" to your office: Fixed-term contract: 1 month before your planned retirement. Continuing/Permanent contract: 3 months before. Temporary appointment: 15 days before.</p></div>
+      <div class="faq-a"><ul><li><strong>Normal retirement age 60:</strong> You may retire any time between age 60 and 65, provided you have at least 5 years of contributions.</li><li><strong>Normal retirement age 62:</strong> You may retire any time between age 62 and 65, provided you have at least 5 years of contributions.</li></ul><p>To initiate retirement, submit a <em>"notice to retire"</em> to your office:</p><ul><li>Fixed-term contract: 1 month before your planned retirement date</li><li>Continuing/Permanent contract: 3 months before</li><li>Temporary appointment: 15 days before</li></ul></div>
     </div>
 
     <div class="faq-item" data-topics="pension">
@@ -750,7 +768,7 @@
 
     <div class="faq-item" data-topics="pension">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-pension">Pension</span><span class="faq-q-text">What are the pension benefits?</span></div><span class="faq-chevron">▾</span></div>
-      <div class="faq-a"><p>Pension benefits are only available upon separation. The available pension benefits are determined based on your pension contribution period and your age: <strong>Less than 5 years, any age:</strong> Withdrawal settlement (deferrable up to 36 months) — use <a href="https://www.unjspf.org/wp-content/uploads/2022/11/Web_E6_English.pdf" target="_blank">PENS E.6 form (with video tutorial)</a>. <strong>At least 5 years, below early retirement age:</strong> Withdrawal settlement or Deferred Retirement Benefit (deferrable up to 36 months) — use <a href="https://www.unjspf.org/wp-content/uploads/2023/09/Web_E7_English.pdf" target="_blank">PENS E/7 form (with tutorial)</a>. <strong>At least 5 years, between early and normal retirement age:</strong> Withdrawal settlement, Deferred Retirement Benefit (deferrable up to 36 months), or Early Retirement Benefit. <strong>At least 5 years, normal retirement age:</strong> Normal Retirement Benefit.</p></div>
+      <div class="faq-a"><p>Pension benefits are only available upon separation. Benefits depend on your contribution period and age:</p><ul><li><strong>Less than 5 years — any age:</strong> Withdrawal settlement (deferrable up to 36 months). Use the <a href="https://www.unjspf.org/wp-content/uploads/2022/11/Web_E6_English.pdf" target="_blank">PENS E.6 form (with video tutorial)</a>.</li><li><strong>At least 5 years — below early retirement age:</strong> Withdrawal settlement or Deferred Retirement Benefit (deferrable up to 36 months). Use the <a href="https://www.unjspf.org/wp-content/uploads/2023/09/Web_E7_English.pdf" target="_blank">PENS E/7 form (with tutorial)</a>.</li><li><strong>At least 5 years — between early and normal retirement age:</strong> Withdrawal settlement, Deferred Retirement Benefit (deferrable up to 36 months), or Early Retirement Benefit.</li><li><strong>At least 5 years — at normal retirement age:</strong> Normal Retirement Benefit.</li></ul></div>
     </div>
 
     <div class="faq-item" data-topics="pension">
@@ -813,7 +831,7 @@
 
     <div class="faq-item" data-topics="ashi">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-ashi">ASHI</span><span class="faq-q-text">How much are the ASHI costs and how will I pay them?</span></div><span class="faq-chevron">▾</span></div>
-      <div class="faq-a"><p>If you are local staff (General Service or National Officer): ASHI monthly premium will be approximately 50% of the MIP costs. If you are International Professional or Director staff: please consult the <a href="https://www.un.org/insurance/sites/www.un.org.insurance/files/ashi_rates_2023.pdf" target="_blank">ASHI subsidy and contribution rates chart</a> on the UN Health and Life Insurance Section's website. Your ASHI contributions will be deducted from your monthly retirement benefit — no action required from you.</p></div>
+      <div class="faq-a"><ul><li><strong>Local staff (General Service or National Officer):</strong> ASHI monthly premium will be approximately 50% of the MIP costs.</li><li><strong>International Professional or Director staff:</strong> Please consult the <a href="https://www.un.org/insurance/sites/www.un.org.insurance/files/ashi_rates_2023.pdf" target="_blank">ASHI subsidy and contribution rates chart</a> on the UN Health and Life Insurance Section's website.</li></ul><p>Your ASHI contributions will be deducted from your monthly retirement benefit — no action required from you.</p></div>
     </div>
 
     <div class="faq-item" data-topics="ashi">
@@ -838,12 +856,12 @@
 
     <div class="faq-item" data-topics="ashi">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-ashi">ASHI</span><span class="faq-q-text">Can ASHI coverage be terminated at any point in time? What is the procedure?</span></div><span class="faq-chevron">▾</span></div>
-      <div class="faq-a"><p>Yes, the plan can be terminated at any point, but the former staff member cannot return to ASHI anymore. Former IP staff should turn to <a href="https://www.un.org/insurance/" target="_blank">HLIS</a> for terminating the plan; former local staff should reach out to GSSC HR Offboarding via separatedstaff@unicef.org. In case of any dispute, SRR and UNICEF policies/procedures will prevail.</p></div>
+      <div class="faq-a"><p>Yes, the plan can be terminated at any point, but the former staff member cannot return to ASHI anymore. Former IP staff should turn to <a href="https://www.un.org/insurance/" target="_blank">HLIS</a> for terminating the plan; former local staff should reach out to GSSC HR Offboarding via <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="14677164756675607170676075727254617a7d7771723a7b6673">[email&#160;protected]</a>. In case of any dispute, SRR and UNICEF policies/procedures will prevail.</p></div>
     </div>
 
     <div class="faq-item" data-topics="ashi">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-ashi">ASLI</span><span class="faq-q-text">What is ASLI? Who is eligible?</span></div><span class="faq-chevron">▾</span></div>
-      <div class="faq-a"><p>The Hartford Group Life Insurance (GLI) is a voluntary plan that is not subsidized by UNICEF and is not mandatory for staff members. You are eligible for automatic participation in the After-Service Life Insurance (ASLI) if you: are at least 55 years old at the time of your separation; participated in Group Life Insurance for at least ten years as an active staff member; have an active life insurance plan at the time of your separation. After-Service Life Insurance eligibility is determined by the UN Health and Life Insurance Section located in UNHQ. If you are eligible, coverage is automatic and requires no application. Life insurance plan participants with at least 10 years of contributory participation under the age of 55 on separation are eligible for one-year free life insurance coverage at the level of coverage on the date of separation for each completed ten years of participation. Please visit the <a href="https://www.un.org/insurance/content/retirees" target="_blank">UN Health and Life Insurance Section website</a> for further information and reach out to <a href="mailto:hlis@un.org">hlis@un.org</a>.</p></div>
+      <div class="faq-a"><p>The Hartford Group Life Insurance (GLI) is a voluntary plan that is not subsidized by UNICEF and is not mandatory for staff members. You are eligible for automatic participation in the After-Service Life Insurance (ASLI) if you: are at least 55 years old at the time of your separation; participated in Group Life Insurance for at least ten years as an active staff member; have an active life insurance plan at the time of your separation. After-Service Life Insurance eligibility is determined by the UN Health and Life Insurance Section located in UNHQ. If you are eligible, coverage is automatic and requires no application. Life insurance plan participants with at least 10 years of contributory participation under the age of 55 on separation are eligible for one-year free life insurance coverage at the level of coverage on the date of separation for each completed ten years of participation. Please visit the <a href="https://www.un.org/insurance/content/retirees" target="_blank">UN Health and Life Insurance Section website</a> for further information and reach out to <a href="/cdn-cgi/l/email-protection#0a626663794a7f642465786d"><span class="__cf_email__" data-cfemail="60080c091320150e4e0f1207">[email&#160;protected]</span></a>.</p></div>
     </div>
 
     <!-- SECTION: Early separation -->
@@ -851,7 +869,7 @@
 
     <div class="faq-item" data-topics="early">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-early">Separation</span><span class="faq-q-text">My post is abolished in December 2025. May I separate earlier?</span></div><span class="faq-chevron">▾</span></div>
-      <div class="faq-a"><p>Yes, this is possible and this is called "early separation". If you wish to leave before the abolishment date, you need to send a written request to your supervisor as outlined below: 1. Fixed-term contract: 1 month before your planned separation. 2. Continuing/Permanent contract: 3 months before your planned separation. 3. Temporary appointment: 15 days before your planned separation. It is very important that you ask for "early separation" and do not submit your request as "resignation".</p></div>
+      <div class="faq-a"><p>Yes, this is possible and this is called <strong>"early separation"</strong>. If you wish to leave before the abolishment date, send a written request to your supervisor with the following notice period:</p><ul><li><strong>Fixed-term contract:</strong> 1 month before your planned separation</li><li><strong>Continuing/Permanent contract:</strong> 3 months before your planned separation</li><li><strong>Temporary appointment:</strong> 15 days before your planned separation</li></ul><p><strong>Important:</strong> You must request <em>"early separation"</em> — do not submit your request as a <em>"resignation"</em>, as this will result in loss of your separation entitlements.</p></div>
     </div>
 
     <div class="faq-item" data-topics="early">
@@ -866,12 +884,12 @@
 
     <div class="faq-item" data-topics="early">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-early">Separation</span><span class="faq-q-text">Will I lose my termination indemnity if I ask for early separation?</span></div><span class="faq-chevron">▾</span></div>
-      <div class="faq-a"><p>No, if early separation is approved, you will separate on post abolishment and your entitlements will be: 1. Salary (with post adjustment, allowances) will be paid until your separation date. 2. Separation entitlements (including termination indemnity and separation payment) will be paid, as applicable.</p></div>
+      <div class="faq-a"><p>No, if early separation is approved, you will separate on post abolishment and your entitlements will be:</p><ul><li>Salary (with post adjustment, allowances) paid until your separation date</li><li>Separation entitlements (including termination indemnity and separation payment), as applicable</li></ul></div>
     </div>
 
     <div class="faq-item" data-topics="early">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-early">Separation</span><span class="faq-q-text">Will an early separation affect the amount of my termination indemnity?</span></div><span class="faq-chevron">▾</span></div>
-      <div class="faq-a"><p>1. In case you received your official abolishment notification letter prior to 1 April 2025, your early separation will not affect the amount of your termination indemnity and this will be calculated as if you remained in service until the post abolishment date. 2. In case you received your official abolishment notification letter on or after 1 April 2025, the termination indemnity will be calculated based on your continuous active service until your actual separation date.</p></div>
+      <div class="faq-a"><ul><li><strong>Notification received before 1 April 2025:</strong> Your early separation will not affect the amount of your termination indemnity. It will be calculated as if you remained in service until the post abolishment date.</li><li><strong>Notification received on or after 1 April 2025:</strong> The termination indemnity will be calculated based on your continuous active service until your actual (early) separation date.</li></ul></div>
     </div>
 
     <!-- SECTION: SLWOP & temp assignment -->
@@ -984,7 +1002,7 @@
 
     <div class="faq-item" data-topics="slwop">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-slwop">Temp</span><span class="faq-q-text">What is the maximum duration of a temporary assignment?</span></div><span class="faq-chevron">▾</span></div>
-      <div class="faq-a"><p>Temporary assignment to a non-hardship duty station: maximum cumulative period of up to 364 days. At the end of the temporary assignment you will separate (unless you are re-employed, reinstated, or placed on a successive temporary assignment, for the maximum cumulative period of 364 days). At the end of a cumulative 364 days spent on a temporary assignment, regardless of duration, you are ineligible to request SLWOP.<br>Temporary assignment to a hardship (L2/L3, classified "E"/"D" or Non-Family status) duty station: maximum cumulative period of up to 729 days. You must complete six (6) months of service in this role before applying to other posts or being reassigned to other posts.</p></div>
+      <div class="faq-a"><ul><li><strong>Non-hardship duty station:</strong> Maximum cumulative period of up to 364 days. At the end of the assignment you will separate, unless you are re-employed, reinstated, or placed on a successive temporary assignment (subject to the 364-day cumulative limit). Once you have cumulatively spent 364 days on temporary assignment, you are ineligible to request SLWOP.</li><li><strong>Hardship duty station (L2/L3, classified "E"/"D" or Non-Family status):</strong> Maximum cumulative period of up to 729 days. You must complete six (6) months of service before applying to other posts or being reassigned.</li></ul></div>
     </div>
 
     <div class="faq-item" data-topics="slwop">
@@ -1022,7 +1040,7 @@
 
     <div class="faq-item" data-topics="retirement">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-retirement">Deferral</span><span class="faq-q-text">Why can separation deferral be a good option?</span></div><span class="faq-chevron">▾</span></div>
-      <div class="faq-a"><p>If you are eligible, with the separation deferral option you may bridge the gap (max. 2 years) between the termination date and early/normal retirement age. You will separate at the end of the separation deferral period and will be able to claim an early or normal retirement benefit from the Pension Fund (depending on your age). If you meet all the criteria of ASHI eligibility, you will also be able to apply for ASHI upon separation at the end of the separation deferral period, provided that you contribute towards your health insurance plan throughout the deferral period.</p></div>
+      <div class="faq-a"><p>If you are eligible, the separation deferral option offers the following advantages:</p><ul><li>You may bridge the gap (max. 2 years) between your termination date and your early or normal retirement age.</li><li>You will separate at the end of the deferral period and be able to claim an early or normal retirement benefit from the Pension Fund (depending on your age).</li><li>If you meet all ASHI eligibility criteria, you may also apply for ASHI upon separation at the end of the deferral period — provided you continue contributing towards your health insurance plan throughout the deferral period.</li></ul></div>
     </div>
 
     <div class="faq-item" data-topics="retirement">
@@ -1069,56 +1087,59 @@
 
     <div class="faq-item" data-topics="reappointment">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-retirement">Reappointment</span><span class="faq-q-text">Do I need to repay the termination indemnity if I am reappointed? What about the other separation related payments?</span></div><span class="faq-chevron">▾</span></div>
-      <div class="faq-a"><p>Most separation payments do not need to be repaid: annual leave liquidation, CTO payment, repatriation grant, termination indemnity/separation payment — No repayment required regardless of contract type (FT, TA, or consultancy). The <strong>only exception</strong> is the additional 50% termination indemnity: if reappointed within 12 months on a fixed-term contract — must be repaid. If reappointed on a temporary appointment or consultancy — no repayment required. If reappointed beyond 12 months — no repayment required.</p></div>
+      <div class="faq-a"><p>Most separation payments do <strong>not</strong> need to be repaid, regardless of contract type (FT, TA, or consultancy):</p><ul><li>Annual leave liquidation — no repayment required</li><li>CTO payment — no repayment required</li><li>Repatriation grant — no repayment required</li><li>Termination indemnity / separation payment — no repayment required</li></ul><p>The <strong>only exception</strong> is the additional 50% termination indemnity:</p><ul><li>Reappointed within 12 months on a <strong>fixed-term contract</strong> — must be repaid</li><li>Reappointed on a <strong>temporary appointment or consultancy</strong> — no repayment required</li><li>Reappointed <strong>beyond 12 months</strong> (any contract type) — no repayment required</li></ul></div>
     </div>
 
     <div class="faq-item" data-topics="reappointment">
       <div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-left"><span class="q-tag qt-retirement">Reappointment</span><span class="faq-q-text">I am receiving retirement benefit, and I have an ASHI plan. Will I lose these if I am reappointed?</span></div><span class="faq-chevron">▾</span></div>
-      <div class="faq-a"><p>No, you will not lose these benefits. There are 2 major scenarios: 1. If your new contract is no longer than 6 months and your total calendar year UN income remains below USD 50,000, you will be able to keep your ongoing retirement benefit and ASHI coverage. 2. Should you exceed the above limits, both your retirement benefit and the ASHI will be suspended for the duration of your new contract. You will also contribute to the pension and you will have a UNICEF medical plan. Upon separation the payment of your retirement benefit will resume and you may also ask for the re-activation of your ASHI plan (with unchanged conditions).</p></div>
+      <div class="faq-a"><p>No, you will not lose these benefits. There are 2 major scenarios:</p><ul><li><strong>Scenario 1 — Contract ≤ 6 months and total calendar year UN income below USD 50,000:</strong> You will be able to keep your ongoing retirement benefit and ASHI coverage without interruption.</li><li><strong>Scenario 2 — Exceeding the above limits:</strong> Both your retirement benefit and ASHI will be suspended for the duration of your new contract. You will contribute to the pension fund and be covered by a UNICEF medical plan. Upon separation, your retirement benefit will resume and you may request re-activation of your ASHI plan (with unchanged conditions).</li></ul></div>
     </div>
 
-  </div>
-  <!-- END FAQ -->
-  <!-- END FAQ -->
+    </div><!-- END faq-accordion -->
 
-
+  </div><!-- END faq-card -->
+  <!-- END FAQ -->
 
   <!-- IMPORTANT NOTES -->
   <div class="notes-card">
     <div class="notes-header">
-      <div style="width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-      </div>
-      <div>
+      <div style="position:relative;z-index:1;">
         <div class="notes-header-title">Important notes for all staff</div>
         <div class="notes-header-sub">Read before and during your separation process</div>
       </div>
+      <div style="position:absolute;right:-18px;top:50%;transform:translateY(-50%);width:80px;height:80px;pointer-events:none;">
+        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
     </div>
+
     <div class="notes-body">
 
       <div class="note-item">
         <div class="note-icon">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#003F7D" stroke-width="1.3"/><path d="M8 5v4M8 11v.5" stroke="#003F7D" stroke-width="1.4" stroke-linecap="round"/></svg>
+          <!-- Advances & debts: coin/banknote — financial -->
+          <svg width="21" height="21" viewBox="0 0 16 16" fill="none" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="8" cy="5.5" rx="5" ry="2" stroke="#C68B00" stroke-width="1.3"/><path d="M3 5.5v2c0 1.1 2.24 2 5 2s5-.9 5-2v-2" stroke="#C68B00" stroke-width="1.3"/><path d="M3 7.5v2c0 1.1 2.24 2 5 2s5-.9 5-2v-2" stroke="#C68B00" stroke-width="1.3"/><path d="M7 5v1.5M9 5v1.5" stroke="#003F7D" stroke-width="1.1"/><path d="M6.5 3.8h3" stroke="#003F7D" stroke-width="1.1"/></svg>
         </div>
         <div class="note-content">
           <div class="note-label">Advances and debts towards UNICEF</div>
-          <div class="note-text">Settle your debts with UNICEF prior to your separation such as outstanding balance of Salary Advance, Rental Advance, Education Grant Advance, any cash on hand advances etc. Please contact the local People &amp; Culture or Finance Focal Point for information on the repayment. UNJSPF will not take action on your pension benefits until you have settled your debts vis-à-vis UNICEF. Kindly ensure that your office clears your local PAR Account prior to your departure. Your separation payments will be remitted directly towards any outstanding loan amounts you have with UNFCU, La Mutuelle or equivalent financial institutions, outstanding judicially established family obligations or other legally established indebtedness to third parties, in accordance with Section 6 of ST/AI/2000/12.</div>
+          <div class="note-text"><p>Settle your debts with UNICEF prior to your separation such as outstanding balance of Salary Advance, Rental Advance, Education Grant Advance, any cash on hand advances etc. Please contact the local People &amp; Culture or Finance Focal Point for information on the repayment.</p><p>UNJSPF will not take action on your pension benefits until you have settled your debts vis-à-vis UNICEF. Kindly ensure that your office clears your local PAR Account prior to your departure.</p><p>Your separation payments will be remitted directly towards any outstanding loan amounts you have with UNFCU, La Mutuelle (if applicable) or equivalent financial institutions, outstanding judicially established family obligations or other legally established indebtedness to third parties, in accordance with Section 6 of ST/AI/2000/12.</p></div>
         </div>
       </div>
 
       <div class="note-item">
         <div class="note-icon">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#003F7D" stroke-width="1.3"/><path d="M8 5v3l2 2" stroke="#003F7D" stroke-width="1.4" stroke-linecap="round"/></svg>
+          <!-- Pension: shield with clock inside — protection with time coverage -->
+          <svg width="21" height="21" viewBox="0 0 16 16" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2L3 4.5v4c0 3 2.5 5 5 5.5 2.5-.5 5-2.5 5-5.5v-4L8 2z" stroke="#C68B00" stroke-width="1.3"/><circle cx="8" cy="8.5" r="2.5" stroke="#003F7D" stroke-width="1.1"/><path d="M8 7v1.5l1 1" stroke="#003F7D" stroke-width="1.1"/></svg>
         </div>
         <div class="note-content">
-          <div class="note-label">Frequently Asked Questions — Pension</div>
-          <div class="note-text">Yes, as per Knowledge Article. Please obtain your UID from UIDONLY Request <strong>requestuidonly@unjspf.org</strong> and then log in to <a href="https://member.unjspf.org" target="_blank">https://member.unjspf.org</a>. For the UNJSPF Annual Statement, visit the <a href="https://www.unjspf.org/member-selfservice/" target="_blank">UNJSPF Member Self Service</a>.</div>
+          <div class="note-label">Pension</div>
+          <div class="note-text"><p>Please obtain your UID from UIDONLY Request <a href="mailto:requestuidonly@unjspf.org">requestuidonly@unjspf.org</a> and then log in to <a href="https://member.unjspf.org" target="_blank">https://member.unjspf.org</a>.</p><p>Read the below insightful resources:</p><ul><li><a href="https://unicef.service-now.com/nav_to.do?uri=%2Fkb_view.do%3Fsys_kb_id%3D0658fdf81b092c9093abc84b1d4bcb54" target="_blank">Pension Knowledge Article in Service Gateway</a></li><li><a href="https://www.unjspf.org/for-clients/separation/" target="_blank">UNJSPF information about Separation</a></li><li><a href="https://www.unjspf.org/for-clients/benefit-options/" target="_blank">Understand your benefit options</a></li></ul></div>
         </div>
       </div>
 
       <div class="note-item">
         <div class="note-icon">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 13s-5-3.5-5-7a5 5 0 0110 0c0 3.5-5 7-5 7z" stroke="#003F7D" stroke-width="1.3" fill="none"/></svg>
+          <!-- Health Insurance: shield with heart inside — protection with heart -->
+          <svg width="21" height="21" viewBox="0 0 16 16" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2L3 4.5v4c0 3 2.5 5 5 5.5 2.5-.5 5-2.5 5-5.5v-4L8 2z" stroke="#C68B00" stroke-width="1.3"/><path d="M8 10.5s-2.5-1.6-2.5-3.2a1.5 1.5 0 013 0 1.5 1.5 0 013 0c0 1.6-2.5 3.2-2.5 3.2z" stroke="#003F7D" stroke-width="1.1"/></svg>
         </div>
         <div class="note-content">
           <div class="note-label">Health Insurance</div>
@@ -1128,18 +1149,19 @@
 
       <div class="note-item">
         <div class="note-icon">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="5" width="12" height="8" rx="2" stroke="#003F7D" stroke-width="1.3"/><path d="M5 5V4a3 3 0 016 0v1" stroke="#003F7D" stroke-width="1.3" stroke-linecap="round"/></svg>
+          <!-- ASHI & ASLI: hands cradling heart with smile — support with heart and smile -->
+          <svg width="21" height="21" viewBox="0 0 16 16" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8.5s-3-2-3-4a1.5 1.5 0 013 0 1.5 1.5 0 013 0c0 2-3 4-3 4z" stroke="#C68B00" stroke-width="1.3"/><path d="M5 10.5c-.8.3-1.5.8-2 1.5M11 10.5c.8.3 1.5.8 2 1.5" stroke="#003F7D" stroke-width="1.1"/><path d="M5.5 12.5q2.5 1.5 5 0" stroke="#003F7D" stroke-width="1.1"/></svg>
         </div>
         <div class="note-content">
-          <div class="note-label">Frequently Asked Questions — ASHI &amp; ASLI</div>
-          <div class="note-text">May be eligible in case of eligibility for retirement and receipt of monthly pension benefit, check Knowledge Article. See <a href="https://unicef.service-now.com/cc?sys_kb_id=5812881dfb0d32108b30f2ffbeefdcfe&id=kb_article_view&sysparm_rank=2&sysparm_tsqueryId=a248baa8fbf3fe50ea24fa43aeefdccc" target="_blank">ASHI Knowledge Article</a> and <a href="https://unicef.service-now.com/cc?sys_kb_id=c77286a92ba1a25072e1fa5cf291bf85&id=kb_article_view&sysparm_rank=1&sysparm_tsqueryId=6d19ba2cfbf3fe50ea24fa43aeefdc66" target="_blank">ASLI Knowledge Article</a>.</div>
+          <div class="note-label">ASHI &amp; ASLI</div>
+          <div class="note-text"><p>You may be eligible in cases where you qualify for retirement and receive a monthly pension benefit. See <a href="https://unicef.service-now.com/cc?sys_kb_id=5812881dfb0d32108b30f2ffbeefdcfe&id=kb_article_view&sysparm_rank=2&sysparm_tsqueryId=a248baa8fbf3fe50ea24fa43aeefdccc" target="_blank">ASHI Knowledge Article</a> and <a href="https://unicef.service-now.com/cc?sys_kb_id=c77286a92ba1a25072e1fa5cf291bf85&id=kb_article_view&sysparm_rank=1&sysparm_tsqueryId=6d19ba2cfbf3fe50ea24fa43aeefdc66" target="_blank">ASLI Knowledge Article</a>.</p></div>
         </div>
       </div>
 
     </div>
   </div>
 
-</div>
+</div><!-- END main -->
 
 <!-- FOOTER -->
 <div class="footer">
@@ -1147,7 +1169,7 @@
   <div>Internal use only</div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── DATA ────────────────────────────────────────────────────────────────────
 // Each entry: { section, name, detail, ref, status }
 // status: "Eligible" | "Conditional" | "NA"
@@ -1775,20 +1797,23 @@ function faqUpdateBanner(tag, searchTotal, query) {
       ? 'Highlighted topics contain questions related to &ldquo;<strong>' + query + '</strong>&rdquo; &mdash; click a tile to view them'
       : 'No topics match &ldquo;<strong>' + query + '</strong>&rdquo; &mdash; try different keywords';
     b.classList.add('show');
-  } else if (tag !== 'all') {
-    const n = faqBaseCounts[tag] || 0;
-    b.innerHTML = 'Showing <strong>' + n + '</strong> question' + (n>1?'s':'') + ' for this topic';
-    b.classList.add('show');
-  } else {
+  } else if (tag === 'all') {
     b.classList.remove('show');
+    b.innerHTML = '';
+  } else {
+    const count = document.querySelectorAll('.faq-item:not(.faq-hidden)').length;
+    b.innerHTML = 'Showing <strong>' + count + '</strong> question' + (count !== 1 ? 's' : '') + ' in this topic';
+    b.classList.add('show');
   }
 }
 
-// Init
-document.getElementById('step3').style.display = '';
-lockStep(1); lockStep(2); lockStep(3);
-// FAQ: hide all items on load — show prompt until topic selected
-faqApplyFilter('all', '');
+document.addEventListener('DOMContentLoaded', function() {
+  // Hide all accordion items and section heads on load — show prompt instead
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.add('faq-hidden'));
+  document.querySelectorAll('.faq-section-head').forEach(s => s.classList.add('faq-hidden'));
+  const prompt = document.getElementById('faq-prompt');
+  if (prompt) prompt.style.display = 'block';
+});
 </script>
 </body>
 </html>
