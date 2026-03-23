@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Separation Benefits &amp; Entitlements Navigator — Post Abolishment | UNICEF Indonesia P&amp;C</title>
+<title>Post-Abolishment Separation Guide &amp; Entitlements Navigator | UNICEF Indonesia P&amp;C</title>
 <style>
   :root {
     --ub: #1CABE2;
@@ -46,6 +46,11 @@
   /* ── POLICY NOTICE ── */
   .policy-notice { background: #F2F4F6; border: 1px solid #D8DCE0; border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 28px; margin-top: 8px; display: flex; gap: 12px; align-items: flex-start; font-size: 12px; color: #3A3A3A; line-height: 1.7; }
   .notice-icon { flex-shrink: 0; margin-top: 1px; }
+  .notice-list { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 9px; }
+  .notice-list li { display: grid; grid-template-columns: 26px 1fr; row-gap: 1px; }
+  .notice-num { font-weight: 700; color: #003F7D; font-size: 12px; line-height: 1.7; }
+  .notice-title { font-weight: 700; color: #003F7D; font-size: 12px; line-height: 1.7; }
+  .notice-desc { grid-column: 2; font-size: 12px; color: #3A3A3A; line-height: 1.7; }
 
   /* ── NAVIGATOR CARD ── */
   .navigator { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 0; box-shadow: 0 1px 4px rgba(0,63,125,0.06); }
@@ -115,7 +120,7 @@
   .note-item:hover { border-color: var(--ud); background: #D6E4F0; }
   .note-icon { width: 39px; height: 39px; border-radius: 8px; background: #E2E8EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .note-content { flex: 1; min-width: 0; }
-  .note-label { font-size: 12px; font-weight: 600; color: #003F7D; line-height: 1.35; margin-bottom: 2px; }
+  .note-label { font-size: 12px; font-weight: 600; color: #003F7D; line-height: 1.35; margin-bottom: 2px; padding-top: 9px; }
   .note-text { font-size: 12px; color: #3A3A3A; line-height: 1.6; }
   .note-text p { margin-bottom: 8px; }
   .note-text p:last-child { margin-bottom: 0; }
@@ -124,7 +129,45 @@
   .note-text a { color: var(--ub); text-decoration: underline; }
   .note-text strong { color: var(--text); font-weight: 500; }
 
-  /* ── LEGEND ── */
+  /* ── SEPARATION STEPS ── */
+  .steps-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,63,125,0.06); overflow: hidden; }
+  .steps-card-header { background: var(--ub); padding: 14px 20px; display: flex; align-items: center; gap: 10px; border-radius: var(--radius) var(--radius) 0 0; position: relative; overflow: hidden; }
+  .steps-card-title { font-size: 15px; font-weight: 600; color: var(--white); }
+  .steps-card-sub { font-size: 12px; color: rgba(255,255,255,0.8); margin-top: 3px; }
+  .steps-card-body { padding: 16px 20px; display: flex; flex-direction: column; gap: 12px; }
+  .step-item { display: flex; gap: 14px; align-items: flex-start; padding: 13px 15px; background: #F2F4F6; border: 1px solid #D0D8DF; border-radius: var(--radius-sm); }
+  .step-item-num { width: 32px; height: 32px; border-radius: 50%; background: var(--ub); color: white; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-item-content { flex: 1; min-width: 0; }
+  .step-item-title { font-size: 12px; font-weight: 700; color: #003F7D; margin-bottom: 6px; line-height: 1.4; padding-top: 8px; }
+  .step-item-body { font-size: 12px; color: #3A3A3A; line-height: 1.7; }
+  .step-item-body p { margin-bottom: 7px; }
+  .step-item-body p:last-child { margin-bottom: 0; }
+  .step-item-body ul { margin: 5px 0 7px 16px; display: flex; flex-direction: column; gap: 3px; }
+  .step-item-body ul li { list-style: disc; }
+  .step-item-body a { color: var(--ub); text-decoration: underline; }
+  .step-item-body strong { color: var(--text); font-weight: 600; }
+
+  /* ── I NEED ASSISTANCE ── */
+  .assist-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,63,125,0.06); overflow: hidden; }
+  .assist-card-header { background: var(--ub); padding: 14px 20px; display: flex; align-items: center; border-radius: var(--radius) var(--radius) 0 0; position: relative; overflow: hidden; }
+  .assist-card-title { font-size: 15px; font-weight: 600; color: var(--white); }
+  .assist-card-sub { font-size: 12px; color: rgba(255,255,255,0.8); margin-top: 3px; }
+  .assist-card-body { padding: 16px 20px; display: flex; flex-direction: column; gap: 12px; }
+  .assist-query { display: flex; gap: 14px; align-items: flex-start; padding: 13px 15px; background: #F2F4F6; border: 1px solid #D0D8DF; border-radius: var(--radius-sm); }
+  .assist-query-num { width: 32px; height: 32px; border-radius: 50%; background: var(--ub); color: white; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .assist-query-content { flex: 1; min-width: 0; }
+  .assist-query-title { font-size: 12px; font-weight: 700; color: #003F7D; margin-bottom: 8px; line-height: 1.4; padding-top: 9px; }
+  .assist-items { display: flex; flex-direction: column; gap: 8px; }
+  .assist-item { display: flex; flex-direction: column; gap: 2px; }
+  .assist-item-row { display: flex; align-items: flex-start; gap: 6px; }
+  .assist-check { font-size: 13px; line-height: 1.6; flex-shrink: 0; }
+  .assist-subtitle { font-size: 12px; font-weight: 600; color: #3A3A3A; line-height: 1.6; }
+  .assist-body { font-size: 12px; color: #3A3A3A; line-height: 1.7; padding-left: 0; }
+  .assist-body p { margin-bottom: 6px; }
+  .assist-body p:last-child { margin-bottom: 0; }
+  .assist-body a { color: var(--ub); text-decoration: underline; }
+
+
   .legend { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; }
   .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
   .legend-pill { font-size: 12px; font-weight: 600; padding: 2px 10px; border-radius: 10px; }
@@ -219,7 +262,29 @@
     .footer { flex-direction: column; }
   }
 
-  .hidden { display: none !important; }
+  /* ── STICKY NAV-GUIDE ── */
+  .sticky-nav { position: sticky; top: 0; z-index: 100; background: var(--ud); border-bottom: 3px solid var(--ub); box-shadow: 0 2px 8px rgba(0,63,125,0.10); }
+  .sticky-nav-inner { max-width: 900px; margin: 0 auto; padding: 10px 28px 12px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .snav-item { display: flex; flex-direction: column; gap: 3px; text-decoration: none; padding: 8px 10px; border-radius: 10px; border: 1px solid #D0D8DF; background: #FFFFFF; transition: all 0.15s; }
+  .snav-item:hover { background: #D6E4F0; border-color: var(--ud); }
+  .snav-head { display: flex; align-items: center; gap: 5px; }
+  .snav-emoji { font-size: 14px; flex-shrink: 0; }
+  .snav-title { font-size: 12px; font-weight: 700; color: #003F7D; line-height: 1.35; }
+  .snav-desc { font-size: 11px; color: #4A6070; line-height: 1.45; padding-left: 25px; }
+
+  /* ── TL;DR ── */
+  .step-tldr { font-size: 11px; font-weight: 600; color: var(--ub); background: rgba(28,171,226,0.08); border-left: 3px solid var(--ub); padding: 5px 10px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin-bottom: 8px; line-height: 1.5; }
+
+  /* ── LAST UPDATED ── */
+  .last-updated { font-size: 10px; color: rgba(255,255,255,0.7); text-align: right; padding: 3px 28px 5px; background: var(--ud); font-style: italic; max-width: 100%; }
+  [id^="section-"] { scroll-margin-top: 200px; }
+
+  /* ── STANDALONE PDF STRIP ── */
+  .pdf-standalone { background: var(--ul); border: 1px solid var(--ulm); border-radius: var(--radius); padding: 12px 20px; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .pdf-standalone-text { font-size: 12px; color: var(--ud); font-weight: 600; }
+  .pdf-standalone-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+
   .fade-in { animation: fadeIn 0.25s ease; }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 </style>
@@ -234,7 +299,7 @@
       <div class="header-divider"></div>
       <div style="font-size:13px;font-weight:700;color:rgba(255,255,255,0.95);letter-spacing:0.04em;">People &amp; Culture</div>
     </div>
-    <div class="header-title">Separation Benefits &amp; Entitlements Navigator</div>
+    <div class="header-title">Post-Abolishment Separation Guide &amp; Entitlements Navigator</div>
     <div class="header-sub" style="margin-top:12px;line-height:1.9;">
       <span style="color:rgba(255,255,255,0.8);font-size:10px;font-style:italic;">This tool is aligned with GSSC Offboarding Resources and reflects the following reference matrices:</span><br>
       <span style="color:rgba(255,255,255,0.6);font-size:10px;font-style:italic;">1. </span><a href="https://unicef.sharepoint.com/teams/GSSC-Payroll/Offboarding%20Working%20Confidential/Forms/AllItems.aspx?id=%2Fteams%2FGSSC%2DPayroll%2FOffboarding%20Working%20Confidential%2FOFFB%20Management%2FProjects%202025%2FAbolishment%20project%2FApr%202025%20B%26E%20Matrix%20Contract%20end%20date%20and%20abolishment%20coinciding%2Epdf&parent=%2Fteams%2FGSSC%2DPayroll%2FOffboarding%20Working%20Confidential%2FOFFB%20Management%2FProjects%202025%2FAbolishment%20project&p=true&ga=1" target="_blank" style="color:rgba(255,255,255,0.9);text-decoration:underline;font-size:10px;font-style:italic;">Benefits &amp; Entitlements Matrix for cases where the contract end date coincides with the abolishment date</a><br>
@@ -244,20 +309,42 @@
   <div class="header-bar"></div>
 </div>
 
+<!-- STICKY NAV -->
+<div class="sticky-nav">
+  <div class="sticky-nav-inner">
+    <a class="snav-item" href="#section-steps">
+      <div class="snav-head"><span class="snav-emoji">📋</span><span class="snav-title">Separation Steps</span></div>
+      <span class="snav-desc">What to do — from notification to final pay.</span>
+    </a>
+    <a class="snav-item" href="#section-navigator">
+      <div class="snav-head"><span class="snav-emoji">🔍</span><span class="snav-title">Find My Entitlements</span></div>
+      <span class="snav-desc">3 questions → your exact benefits &amp; entitlements.</span>
+    </a>
+    <a class="snav-item" href="#section-navigator">
+      <div class="snav-head"><span class="snav-emoji">📄</span><span class="snav-title">Download a PDF</span></div>
+      <span class="snav-desc">Personalised entitlements summary to save or print.</span>
+    </a>
+    <a class="snav-item" href="#section-faq">
+      <div class="snav-head"><span class="snav-emoji">❓</span><span class="snav-title">Frequently Asked Questions</span></div>
+      <span class="snav-desc">Search or browse 9 topics — leave, pension, ASHI &amp; more.</span>
+    </a>
+    <a class="snav-item" href="#section-notes">
+      <div class="snav-head"><span class="snav-emoji">📌</span><span class="snav-title">Important Notes</span></div>
+      <span class="snav-desc">Key reminders on debts, pension, health insurance &amp; ASHI.</span>
+    </a>
+    <a class="snav-item" href="#section-assist">
+      <div class="snav-head"><span class="snav-emoji">💬</span><span class="snav-title">I Need Assistance</span></div>
+      <span class="snav-desc">Right contact for pension, payment, ASHI &amp; repatriation.</span>
+    </a>
+  </div>
+  <div class="last-updated">Last updated: 23 March 2026 — aligned with GSSC GUIDANCE/DHR/2022/002 v 1st April 2025</div>
+</div>
+
 <!-- MAIN -->
 <div class="main">
 
-  <!-- Policy notice -->
-  <div class="policy-notice">
-    <div class="notice-icon">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#C68B00" stroke-width="1.4"/><path d="M8 7v4M8 5v.5" stroke="#003F7D" stroke-width="1.3" stroke-linecap="round"/></svg>
-    </div>
-    <div>This tool covers <strong>two post-abolishment scenarios</strong>: (1) when your contract end date coincides with the abolishment notification, and (2) when your contract extends beyond the notification date. These apply to notifications issued from 1 April 2025 onwards.<br><br>You can download a PDF summary of your separation benefits and entitlements, and refer to the FAQ (grouped by topic) for further guidance.
-    </div>
-  </div>
-
   <!-- NAVIGATOR + RESULTS WRAPPER — single visual unit -->
-  <div style="margin-bottom:28px;box-shadow:0 1px 4px rgba(0,63,125,0.06);border-radius:var(--radius);">
+  <div id="section-navigator" style="margin-bottom:28px;box-shadow:0 1px 4px rgba(0,63,125,0.06);border-radius:var(--radius);">
   <!-- NAVIGATOR -->
   <div class="navigator">
     <div class="nav-header" style="display:flex;align-items:center;">
@@ -372,9 +459,130 @@
 
   </div><!-- END NAVIGATOR + RESULTS WRAPPER -->
 
+  <!-- STANDALONE PDF DOWNLOAD -->
+  <div class="pdf-standalone" id="pdf-standalone-strip">
+    <div>
+      <div class="pdf-standalone-text">📄 Download your personalised Benefits &amp; Entitlements PDF</div>
+      <div class="pdf-standalone-sub">Complete the entitlement finder above first — your profile-specific PDF will be available here</div>
+    </div>
+    <a class="dl-btn" id="pdf-standalone-btn" href="#section-navigator">Select your profile ↑</a>
+  </div>
+
+  <!-- WHAT YOU NEED TO DO ON SEPARATION -->
+  <div id="section-steps" class="steps-card">
+    <div class="steps-card-header">
+      <div style="position:relative;z-index:1;">
+        <div class="steps-card-title">What You Need to Do on Separation due to Post Abolishment</div>
+        <div class="steps-card-sub">Follow these steps to manage your separation process</div>
+      </div>
+      <div style="position:absolute;right:-18px;top:50%;transform:translateY(-50%);width:80px;height:80px;pointer-events:none;">
+        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+      </div>
+    </div>
+    <div class="steps-card-body">
+
+      <!-- Step 01 -->
+      <div class="step-item">
+        <div class="step-item-num">01</div>
+        <div class="step-item-content">
+          <div class="step-item-title">Abolishment Notification Received</div>
+          <div class="step-tldr">Key action: Acknowledge your notification, review your options, and check if you qualify to sign the No Contest Agreement.</div>
+          <div class="step-item-body">
+            <p>Acknowledge the abolishment notification.</p>
+            <p>If your post is abolished on your contract end date and you have at least 5 years of continuous service, consider signing the No Contest Agreement as applicable – please contact your People &amp; Culture Business Partner for more information. <em>Note: The No Contest Agreement is available to Fixed-Term, Continuing, and Permanent appointment holders only, and entitles eligible staff to a separation payment in lieu of termination indemnity. Signing is voluntary but must be done within the timeframe communicated in your abolishment notification.</em></p>
+            <p>As you are prioritized in recruitments until the post abolishment date, keep an eye on suitable vacancies and keep applying.</p>
+            <p>Should you wish to have an estimate of your separation package for planning purposes, you may use the separation entitlements calculator for estimating your final pay: <a href="https://undpestimationtools.dp.beta.undp.org/EstimationToolsApp/app/separation" target="_blank">Separation Calculator</a>. The final entitlements will be confirmed by the GSSC at the time of closure of your separation case and release of your separation package.</p>
+            <p>Run estimates of your pension entitlements directly on the <a href="https://member.unjspf.org/prod/app?service=page/MemberPages:MemberLogin" target="_blank">UNJSPF Member Self-Service</a>.</p>
+            <p>In case you have any outstanding debts towards the organization (such as salary advance, rental advance, etc.) and/or your debt is deducted from your monthly salary over a longer period of time, review your repayment plan and revise it with your local HR/GSSC Payroll as necessary.</p>
+            <p>In case you have an outstanding Education Grant advance, please make sure you submit the claim one month prior to the separation from service at the latest, otherwise the full education grant advance paid will need to be recovered from your last salary and/or final pay. Please refer to <a href="https://unicef.service-now.com/cc?id=kb_article_view&sys_kb_id=669bc966fb7e72900798ff88beefdcb3" target="_blank">Education Grant Knowledge Article</a>.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 02 -->
+      <div class="step-item">
+        <div class="step-item-num">02</div>
+        <div class="step-item-content">
+          <div class="step-item-title">Between Notification and Two Months Before Separation</div>
+          <div class="step-tldr">Key action: Consider SLWOP or Temporary Assignment options, and plan your remaining leave before the ceiling kicks in.</div>
+          <div class="step-item-body">
+            <p>Consider the option of going on Special Leave Without Pay for a maximum period of 12 months instead of separating from service, during which you can continue applying for vacancies as an internal candidate. <em>Note: SLWOP requires approval from your office and is not automatic. The period of SLWOP does not count as active service for pension contribution or entitlement purposes. Contact your People &amp; Culture Business Partner to discuss eligibility and implications.</em></p>
+            <p><strong>Fixed-Term/Permanent/Continuing appointment holders:</strong> Consider the option of taking up a Temporary Assignment and retaining your FT entitlements instead of separating from service. <em>Note: The Temporary Assignment must be within UNICEF and does not halt the post abolishment timeline. FT entitlements are retained only for the duration of the TA. Contact your People &amp; Culture Business Partner to confirm eligibility before proceeding.</em></p>
+            <p>Carefully plan and discuss leaves and flexible working arrangements with your supervisor and local HR.</p>
+            <p>You may wish to utilize annual leave days beyond 60 days (FT/Perm/Continuing)/ 18 days (TA) as any leave days beyond the maximum ceiling will be forfeited.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 03 -->
+      <div class="step-item">
+        <div class="step-item-num">03</div>
+        <div class="step-item-content">
+          <div class="step-item-title">One Month Prior to the Abolishment Date</div>
+          <div class="step-tldr">Key action: Submit your Collect Input task in Service Gateway with all required documents, and ensure all leaves are approved 20 days before your last day.</div>
+          <div class="step-item-body">
+            <p>Make sure all outstanding amounts are cleared or will be cleared before your last day under contract.</p>
+            <p>Fill in the Collect Input task received via Service Gateway and attach the necessary documentation:</p>
+            <ul>
+              <li>Your latest valid passport/national ID</li>
+              <li>Your completed Pension form</li>
+              <li>Proof of banking for UNJSPF payment purposes</li>
+              <li>Retirees: Birth certificates or passports/national IDs of your recorded dependents, your marriage/divorce certificate if applicable</li>
+              <li>After Service Health Insurance (ASHI) enrolment form if eligible (optional). Please find more information on the ASHI eligibility in the related knowledge article in Service Gateway.</li>
+            </ul>
+            <p>Please make sure that all your leaves and attendances for the remainder of your contract are submitted and approved 20 days prior to your last day under contract.</p>
+            <p>Complete Performance Evaluation Report (PER) for yourself and your supervisees.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 04 -->
+      <div class="step-item">
+        <div class="step-item-num">04</div>
+        <div class="step-item-content">
+          <div class="step-item-title">On Your Last Day of the Contract</div>
+          <div class="step-tldr">Key action: Return all office equipment, clear outstanding amounts, and download your certificate of employment and payslips before system access is revoked.</div>
+          <div class="step-item-body">
+            <p>Return your office equipment and UNLP, building pass, mobile phone, etc.</p>
+            <p>Clear any pending outstanding amounts towards UNICEF.</p>
+            <p>Make sure all your leaves and attendances are up to date.</p>
+            <p>Download a certificate of employment in <a href="https://unicef.service-now.com/cc?id=home" target="_blank">Service Gateway</a> and your payslips from <a href="https://mappsprd.unicef.org:44300/sap/bc/ui5_ui5/ui2/ushell/shells/abap/Fiorilaunchpad.html?sap-client=100&sap-language=EN#ZHRPayStubExt_V3-display" target="_blank">Fiori (Paystub menu)</a> before your system accesses are revoked.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 05 -->
+      <div class="step-item">
+        <div class="step-item-num">05</div>
+        <div class="step-item-content">
+          <div class="step-item-title">For IP Staff Eligible for Repatriation Grant</div>
+          <div class="step-tldr">Key action: Send proof of residency in your new place of residence to separatedstaff@unicef.org once you have left your duty station.</div>
+          <div class="step-item-body">
+            <p>Once you have left the country of your duty station, provide proof of residency in your new place of residence and send it to <a href="mailto:separatedstaff@unicef.org">separatedstaff@unicef.org</a>. Remember to specify your full name and UNICEF personnel number for ease of reference.</p>
+            <p>For more information on claiming your repatriation grant, please refer to <a href="https://unicef.service-now.com/cc?id=kb_article_view&sys_id=d4a6d5adfbac6250ef4ffca0aeefdc18&table=kb_knowledge" target="_blank">Repatriation Grant</a> for more guidance.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 06 -->
+      <div class="step-item">
+        <div class="step-item-num">06</div>
+        <div class="step-item-content">
+          <div class="step-item-title">Approximately One Month Following Your Separation Date</div>
+          <div class="step-tldr">Key action: Expect your final pay 4–6 weeks after separation. For any queries, contact GSSC at separatedstaff@unicef.org with your full name and personnel number.</div>
+          <div class="step-item-body">
+            <p>Your final pay (separation package) will arrive to the bank account selected.</p>
+            <p>In case of any questions/queries/requests, please contact GSSC HR Offboarding colleagues at <a href="mailto:separatedstaff@unicef.org">separatedstaff@unicef.org</a>. Remember to specify your full name and UNICEF personnel number for ease of reference.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- END SEPARATION STEPS -->
+
 
   <!-- FAQ SECTION -->
-  <div class="faq-card">
+  <div id="section-faq" class="faq-card">
     <div class="faq-card-header">
       <div style="position:relative;z-index:1;">
         <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;">
@@ -1101,7 +1309,7 @@
   <!-- END FAQ -->
 
   <!-- IMPORTANT NOTES -->
-  <div class="notes-card">
+  <div id="section-notes" class="notes-card">
     <div class="notes-header">
       <div style="position:relative;z-index:1;">
         <div class="notes-header-title">Important notes for all staff</div>
@@ -1161,12 +1369,89 @@
     </div>
   </div>
 
+  <!-- I NEED ASSISTANCE -->
+  <div id="section-assist" class="assist-card">
+    <div class="assist-card-header">
+      <div style="position:relative;z-index:1;">
+        <div class="assist-card-title">I Need Assistance</div>
+        <div class="assist-card-sub">Find the right contact based on your query and separation status</div>
+      </div>
+      <div style="position:absolute;right:-18px;top:50%;transform:translateY(-50%);width:80px;height:80px;pointer-events:none;">
+        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      </div>
+    </div>
+    <div class="assist-card-body">
+
+      <!-- Query 1: Pension -->
+      <div class="assist-query">
+        <div class="assist-query-num">1</div>
+        <div class="assist-query-content">
+          <div class="assist-query-title">I have a query about my pension payment</div>
+          <div class="assist-items">
+            <div class="assist-item">
+              <div class="assist-item-row"><span class="assist-check">✅</span><span class="assist-body" style="padding-left:0;"><p style="margin:0;"><strong>I will be separated, but my separation process is not yet initiated:</strong> You may reach out to your People &amp; Culture Business Partner for assistance. Should you need further assistance, please open a <strong>GSSC General Inquiry request</strong> in Service Gateway. One of our expert colleagues will get back to you with the answer in e-mail.</p></span></div>
+            </div>
+            <div class="assist-item">
+              <div class="assist-item-row"><span class="assist-check">✅</span><span class="assist-body" style="padding-left:0;"><p style="margin:0;"><strong>I will be separated, and my separation from service process is already initiated:</strong> You may address your inquiry to your Offboarding Agent.</p></span></div>
+            </div>
+            <div class="assist-item">
+              <div class="assist-item-row"><span class="assist-check">✅</span><span class="assist-body" style="padding-left:0;"><p style="margin:0 0 6px;"><strong>I am separated, and my separation process is already closed in Service Gateway:</strong> The GSSC Offboarding Pension Team collects and reviews all the documents submitted for your pension claim. If something is missing or incorrect, they will get in touch with you – this usually happens before the separation date.</p><p style="margin:0 0 6px;">They submit the documentation to the Pension Fund and notify you about this in e-mail (you will receive an e-mail from GSSC Pension Forms).</p><p style="margin:0;">The Pension Fund will need about 3 weeks from this date. You may have a follow-up with them via their official contact channels: <a href="https://www.unjspf.org/contact-us/" target="_blank">Contact Us — UNJSPF</a>.</p></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Query 2: Final payment -->
+      <div class="assist-query">
+        <div class="assist-query-num">2</div>
+        <div class="assist-query-content">
+          <div class="assist-query-title">I have a query about my final payment from UNICEF</div>
+          <div class="assist-items">
+            <div class="assist-item">
+              <div class="assist-item-row"><span class="assist-check">✅</span><span class="assist-body" style="padding-left:0;"><p style="margin:0;">Your final payment will be released about 4–6 weeks after your separation date, provided that all the documentation and clearances are in order. Should you have a more specific question, please open a <strong>GSSC General Inquiry request</strong> in Service Gateway.</p></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Query 3: ASHI enrolment -->
+      <div class="assist-query">
+        <div class="assist-query-num">3</div>
+        <div class="assist-query-content">
+          <div class="assist-query-title">I have a query about my ASHI enrolment</div>
+          <div class="assist-items">
+            <div class="assist-item">
+              <div class="assist-item-row"><span class="assist-check">✅</span><span class="assist-body" style="padding-left:0;"><p style="margin:0 0 6px;"><strong>If you are an International Professional staff:</strong> Please make sure you submitted all documents required through your Separation from service case in time (earliest: 31 days before your separation date – latest 31 days after your separation date).</p><p style="margin:0;">Please note that late submission is not accepted; and the enrolment (activation of your ASHI plan) may take a couple of weeks. To have a follow-up, you may contact the UN Health and Life Insurance Section (HLIS) directly: <a href="mailto:ashi@un.org">ashi@un.org</a>.</p></span></div>
+            </div>
+            <div class="assist-item">
+              <div class="assist-item-row"><span class="assist-check">✅</span><span class="assist-body" style="padding-left:0;"><p style="margin:0;"><strong>If you are a local staff member (General Service Staff or National Officer Staff):</strong> Please make sure you submitted all documents required through your Separation from service case in time (earliest: 31 days before your separation date – latest 31 days after your separation date). Please note that late submission is not accepted. To have a follow-up, you may contact the HR Offboarding colleague who worked on your separation case.</p></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Query 4: Repatriation grant -->
+      <div class="assist-query">
+        <div class="assist-query-num">4</div>
+        <div class="assist-query-content">
+          <div class="assist-query-title">I want to submit my documents for the repatriation grant claim</div>
+          <div class="assist-items">
+            <div class="assist-item">
+              <div class="assist-item-row"><span class="assist-check">✅</span><span class="assist-body" style="padding-left:6px;"><p>Please send the required documents to the <a href="mailto:separatedstaff@unicef.org">separatedstaff@unicef.org</a> inbox.</p></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- END I NEED ASSISTANCE -->
+
 </div><!-- END main -->
 
 <!-- FOOTER -->
 <div class="footer">
-  <div>Separation Benefits &amp; Entitlements Navigator</div>
-  <div>Internal use only</div>
+  <div>Post-Abolishment Separation Guide &amp; Entitlements Navigator — UNICEF Indonesia People &amp; Culture</div>
+  <div>For UNICEF Indonesia staff affected by post abolishment · Last updated: 23 March 2026</div>
 </div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
@@ -1602,7 +1887,17 @@ function showResults(yearsKey) {
   btn.href = pdfUrl;
   sub.textContent = `Download your personalised entitlements PDF — ${PROFILE_LABELS[state.contract]} · ${PROFILE_LABELS[state.staff]}${yearsKey !== 'any' ? ' · ' + PROFILE_LABELS[yearsKey] : ''}`;
 
-  document.getElementById('results-panel').style.display = 'block';
+  // Sync standalone PDF strip
+  const standaloneBtn = document.getElementById('pdf-standalone-btn');
+  const standaloneSub = document.querySelector('.pdf-standalone-sub');
+  if (standaloneBtn) {
+    standaloneBtn.href = pdfUrl;
+    standaloneBtn.textContent = 'Download PDF ↓';
+    standaloneBtn.target = '_blank';
+  }
+  if (standaloneSub) {
+    standaloneSub.textContent = `Your profile: ${PROFILE_LABELS[state.contract]} · ${PROFILE_LABELS[state.staff]}${yearsKey !== 'any' ? ' · ' + PROFILE_LABELS[yearsKey] : ''} — click to download`;
+  }
   document.getElementById('results-panel').classList.add('fade-in');
   setTimeout(() => {
     document.getElementById('results-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1615,6 +1910,10 @@ function hideResults() {
   document.getElementById('service-note-indemnity').classList.remove('show');
   document.getElementById('pdf-download-btn').href = '#';
   document.getElementById('pdf-download-sub').textContent = 'Download your personalised Benefits & Entitlements PDF';
+  const standaloneBtn = document.getElementById('pdf-standalone-btn');
+  const standaloneSub = document.querySelector('.pdf-standalone-sub');
+  if (standaloneBtn) { standaloneBtn.href = '#section-navigator'; standaloneBtn.textContent = 'Select your profile ↑'; standaloneBtn.target = '_self'; }
+  if (standaloneSub) { standaloneSub.textContent = 'Complete the entitlement finder above first — your profile-specific PDF will be available here'; }
 }
 
 // ── STEP HELPERS ─────────────────────────────────────────────────────────────
@@ -1813,6 +2112,22 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.faq-section-head').forEach(s => s.classList.add('faq-hidden'));
   const prompt = document.getElementById('faq-prompt');
   if (prompt) prompt.style.display = 'block';
+
+  // Sticky nav — smooth scroll with offset so section header is fully visible below frozen bar
+  document.querySelectorAll('.snav-item').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          const navHeight = document.querySelector('.sticky-nav').offsetHeight;
+          const top = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 8;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+      }
+    });
+  });
 });
 </script>
 </body>
