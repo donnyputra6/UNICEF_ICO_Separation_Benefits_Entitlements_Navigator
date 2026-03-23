@@ -263,21 +263,30 @@
   }
 
   /* ── STICKY NAV-GUIDE ── */
-  .sticky-nav { position: sticky; top: 0; z-index: 100; background: var(--ud); border-bottom: 3px solid var(--ub); box-shadow: 0 2px 8px rgba(0,63,125,0.10); }
-  .sticky-nav-inner { max-width: 900px; margin: 0 auto; padding: 10px 28px 12px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-  .snav-item { display: flex; flex-direction: column; gap: 3px; text-decoration: none; padding: 8px 10px; border-radius: 10px; border: 1px solid #D0D8DF; background: #FFFFFF; transition: all 0.15s; }
+  .sticky-nav { position: sticky; top: 0; z-index: 100; background: var(--ud); border-bottom: 3px solid var(--ub); box-shadow: 0 2px 8px rgba(0,63,125,0.10); transition: all 0.3s ease; }
+  .sticky-nav-inner { max-width: 900px; margin: 0 auto; padding: 10px 28px 12px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; transition: all 0.3s ease; }
+  .snav-item { display: flex; flex-direction: column; gap: 3px; text-decoration: none; padding: 8px 10px; border-radius: 10px; border: 1px solid #D0D8DF; background: #FFFFFF; transition: all 0.25s ease; }
   .snav-item:hover { background: #D6E4F0; border-color: var(--ud); }
   .snav-head { display: flex; align-items: center; gap: 5px; }
   .snav-emoji { font-size: 14px; flex-shrink: 0; }
   .snav-title { font-size: 12px; font-weight: 700; color: #003F7D; line-height: 1.35; }
-  .snav-desc { font-size: 11px; color: #4A6070; line-height: 1.45; padding-left: 25px; }
+  .snav-desc { font-size: 11px; color: #4A6070; line-height: 1.45; padding-left: 25px; transition: all 0.25s ease; max-height: 60px; overflow: hidden; opacity: 1; }
+
+  /* ── COLLAPSED STATE ── */
+  .sticky-nav.collapsed .sticky-nav-inner { grid-template-columns: repeat(6, 1fr); gap: 8px; padding: 8px 28px 9px; }
+  .sticky-nav.collapsed .snav-item { flex-direction: row; align-items: center; gap: 6px; padding: 7px 12px; border-radius: 20px; }
+  .sticky-nav.collapsed .snav-head { align-items: center; }
+  .sticky-nav.collapsed .snav-emoji { line-height: 1; vertical-align: middle; font-size: 15px; }
+  .sticky-nav.collapsed .snav-title { line-height: 1; font-size: 12px; }
+  .sticky-nav.collapsed .snav-desc { max-height: 0; opacity: 0; overflow: hidden; padding: 0; margin: 0; font-size: 0; }
+  .sticky-nav.collapsed .last-updated { display: none; }
 
   /* ── TL;DR ── */
   .step-tldr { font-size: 11px; font-weight: 600; color: var(--ub); background: rgba(28,171,226,0.08); border-left: 3px solid var(--ub); padding: 5px 10px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin-bottom: 8px; line-height: 1.5; }
 
   /* ── LAST UPDATED ── */
   .last-updated { font-size: 10px; color: rgba(255,255,255,0.7); text-align: right; padding: 3px 28px 5px; background: var(--ud); font-style: italic; max-width: 100%; }
-  [id^="section-"] { scroll-margin-top: 200px; }
+  [id^="section-"] { scroll-margin-top: 60px; }
 
   /* ── STANDALONE PDF STRIP ── */
   .pdf-standalone { background: var(--ul); border: 1px solid var(--ulm); border-radius: var(--radius); padding: 12px 20px; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
@@ -325,7 +334,7 @@
       <span class="snav-desc">Personalised entitlements summary to save or print.</span>
     </a>
     <a class="snav-item" href="#section-faq">
-      <div class="snav-head"><span class="snav-emoji">❓</span><span class="snav-title">Frequently Asked Questions</span></div>
+      <div class="snav-head"><span class="snav-emoji">❓</span><span class="snav-title" data-full="Frequently Asked Questions" data-short="FAQs">Frequently Asked Questions</span></div>
       <span class="snav-desc">Search or browse 9 topics — leave, pension, ASHI &amp; more.</span>
     </a>
     <a class="snav-item" href="#section-notes">
@@ -463,7 +472,7 @@
   <div class="pdf-standalone" id="pdf-standalone-strip">
     <div>
       <div class="pdf-standalone-text">📄 Download your personalised Benefits &amp; Entitlements PDF</div>
-      <div class="pdf-standalone-sub">Complete the entitlement finder above first — your profile-specific PDF will be available here</div>
+      <div class="pdf-standalone-sub" id="pdf-standalone-sub-text">💡 Complete the entitlement finder above first — your profile-specific PDF will be available here once done.</div>
     </div>
     <a class="dl-btn" id="pdf-standalone-btn" href="#section-navigator">Select your profile ↑</a>
   </div>
@@ -488,13 +497,15 @@
           <div class="step-item-title">Abolishment Notification Received</div>
           <div class="step-tldr">Key action: Acknowledge your notification, review your options, and check if you qualify to sign the No Contest Agreement.</div>
           <div class="step-item-body">
-            <p>Acknowledge the abolishment notification.</p>
-            <p>If your post is abolished on your contract end date and you have at least 5 years of continuous service, consider signing the No Contest Agreement as applicable – please contact your People &amp; Culture Business Partner for more information. <em>Note: The No Contest Agreement is available to Fixed-Term, Continuing, and Permanent appointment holders only, and entitles eligible staff to a separation payment in lieu of termination indemnity. Signing is voluntary but must be done within the timeframe communicated in your abolishment notification.</em></p>
-            <p>As you are prioritized in recruitments until the post abolishment date, keep an eye on suitable vacancies and keep applying.</p>
-            <p>Should you wish to have an estimate of your separation package for planning purposes, you may use the separation entitlements calculator for estimating your final pay: <a href="https://undpestimationtools.dp.beta.undp.org/EstimationToolsApp/app/separation" target="_blank">Separation Calculator</a>. The final entitlements will be confirmed by the GSSC at the time of closure of your separation case and release of your separation package.</p>
-            <p>Run estimates of your pension entitlements directly on the <a href="https://member.unjspf.org/prod/app?service=page/MemberPages:MemberLogin" target="_blank">UNJSPF Member Self-Service</a>.</p>
-            <p>In case you have any outstanding debts towards the organization (such as salary advance, rental advance, etc.) and/or your debt is deducted from your monthly salary over a longer period of time, review your repayment plan and revise it with your local HR/GSSC Payroll as necessary.</p>
-            <p>In case you have an outstanding Education Grant advance, please make sure you submit the claim one month prior to the separation from service at the latest, otherwise the full education grant advance paid will need to be recovered from your last salary and/or final pay. Please refer to <a href="https://unicef.service-now.com/cc?id=kb_article_view&sys_kb_id=669bc966fb7e72900798ff88beefdcb3" target="_blank">Education Grant Knowledge Article</a>.</p>
+            <ul>
+              <li>Acknowledge the abolishment notification.</li>
+              <li>If your post is abolished on your contract end date and you have at least 5 years of continuous service, consider signing the No Contest Agreement – please contact your People &amp; Culture Business Partner for more information. <em>Eligible staff: FT, Continuing, and Permanent appointment holders only. Benefit: separation payment in lieu of termination indemnity. Signing is voluntary but time-bound — act within the timeframe in your notification.</em></li>
+              <li>You are prioritized in recruitments until the post abolishment date — keep an eye on suitable vacancies and keep applying.</li>
+              <li>To estimate your separation package, use the <a href="https://undpestimationtools.dp.beta.undp.org/EstimationToolsApp/app/separation" target="_blank">Separation Calculator</a>. Final entitlements will be confirmed by GSSC at closure of your case.</li>
+              <li>Run pension estimates on the <a href="https://member.unjspf.org/prod/app?service=page/MemberPages:MemberLogin" target="_blank">UNJSPF Member Self-Service</a>.</li>
+              <li>If you have outstanding debts (salary advance, rental advance, etc.), review your repayment plan and revise it with your People &amp; Culture Business Partner and/or GSSC Payroll as necessary.</li>
+              <li>If you have an outstanding Education Grant advance, submit the claim at least one month before separation — otherwise the full amount will be recovered from your last salary and/or final pay. Refer to the <a href="https://unicef.service-now.com/cc?id=kb_article_view&sys_kb_id=669bc966fb7e72900798ff88beefdcb3" target="_blank">Education Grant Knowledge Article</a>.</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -506,10 +517,12 @@
           <div class="step-item-title">Between Notification and Two Months Before Separation</div>
           <div class="step-tldr">Key action: Consider SLWOP or Temporary Assignment options, and plan your remaining leave before the ceiling kicks in.</div>
           <div class="step-item-body">
-            <p>Consider the option of going on Special Leave Without Pay for a maximum period of 12 months instead of separating from service, during which you can continue applying for vacancies as an internal candidate. <em>Note: SLWOP requires approval from your office and is not automatic. The period of SLWOP does not count as active service for pension contribution or entitlement purposes. Contact your People &amp; Culture Business Partner to discuss eligibility and implications.</em></p>
-            <p><strong>Fixed-Term/Permanent/Continuing appointment holders:</strong> Consider the option of taking up a Temporary Assignment and retaining your FT entitlements instead of separating from service. <em>Note: The Temporary Assignment must be within UNICEF and does not halt the post abolishment timeline. FT entitlements are retained only for the duration of the TA. Contact your People &amp; Culture Business Partner to confirm eligibility before proceeding.</em></p>
-            <p>Carefully plan and discuss leaves and flexible working arrangements with your supervisor and local HR.</p>
-            <p>You may wish to utilize annual leave days beyond 60 days (FT/Perm/Continuing)/ 18 days (TA) as any leave days beyond the maximum ceiling will be forfeited.</p>
+            <ul>
+              <li>Consider going on <strong>Special Leave Without Pay (SLWOP)</strong> for up to 12 months — you remain an internal candidate for vacancies during this period. <em>Note: Requires office approval; not automatic. SLWOP does not count as active service for pension or entitlements. UNICEF health insurance coverage is suspended during SLWOP. Any outside work or employment during SLWOP requires prior approval from the Representative (Outside Activities policy). Contact your People &amp; Culture Business Partner to discuss eligibility.</em></li>
+              <li><strong>Fixed-Term/Permanent/Continuing appointment holders:</strong> Consider a <strong>Temporary Assignment</strong> to retain your FT entitlements instead of separating. <em>Note: Must be within UNICEF; does not halt the abolishment timeline; FT entitlements retained for TA duration only. Confirm eligibility with your People &amp; Culture Business Partner.</em></li>
+              <li>Carefully plan and discuss leaves and flexible working arrangements with your supervisor and local HR.</li>
+              <li>Utilise annual leave days beyond the ceiling (60 days for FT/Perm/Continuing; 18 days for TA) — any days above the maximum will be forfeited.</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -2113,6 +2126,20 @@ document.addEventListener('DOMContentLoaded', function() {
   const prompt = document.getElementById('faq-prompt');
   if (prompt) prompt.style.display = 'block';
 
+  // Sticky nav — collapse on scroll down, expand on scroll back to top
+  const stickyNav = document.querySelector('.sticky-nav');
+  const collapseThreshold = 80;
+  const swapTitles = document.querySelectorAll('.snav-title[data-short]');
+  window.addEventListener('scroll', function() {
+    if (window.pageYOffset > collapseThreshold) {
+      stickyNav.classList.add('collapsed');
+      swapTitles.forEach(t => { t.textContent = t.dataset.short; });
+    } else {
+      stickyNav.classList.remove('collapsed');
+      swapTitles.forEach(t => { t.textContent = t.dataset.full; });
+    }
+  }, { passive: true });
+
   // Sticky nav — smooth scroll with offset so section header is fully visible below frozen bar
   document.querySelectorAll('.snav-item').forEach(function(link) {
     link.addEventListener('click', function(e) {
@@ -2121,7 +2148,7 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         const target = document.querySelector(href);
         if (target) {
-          const navHeight = document.querySelector('.sticky-nav').offsetHeight;
+          const navHeight = stickyNav.offsetHeight;
           const top = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 8;
           window.scrollTo({ top: top, behavior: 'smooth' });
         }
